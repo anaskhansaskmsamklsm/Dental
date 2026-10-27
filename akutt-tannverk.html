@@ -1,0 +1,1926 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akutt tannverk i Kristiansand | Tannlegevakt Kristiansand</title>
+  <meta name="description" content="Sterk tannpine som ikke går over? Tannlegevakt i Kristiansand for akutt tannverk. Dagtid 08:30–16.00 og kveld 16.00–20.00 etter avtale. Ring for å bestille time.">
+
+  <!-- Inter. For produksjon i WordPress: self-host fonten (GDPR). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* =========================================================================
+   1. TOKENS
+   ========================================================================= */
+:root {
+  --navy-950: #071d38;
+  --navy-900: #0a2446;
+  --navy-800: #0f2d52;
+  --navy-700: #173f6d;
+  --blue-600: #1d5593;
+  --blue-500: #2a6aad;
+  --blue-100: #e6eff9;
+  --sky-50:  #f5f9fd;
+  --sky-100: #edf4fb;
+  --sky-200: #dfeaf6;
+  --line:    #dde6f0;
+  --text:    #36506e;
+  --muted:   #5f7692;
+  --red-500: #e5262e;
+  --red-600: #c91e26;
+  --red-400: #ff5b61;
+  --white:   #ffffff;
+
+  /* Typografi – vokser litt på store skjermer */
+  --font: "Inter", "Helvetica Neue", Helvetica, Roboto, Arial, system-ui, sans-serif;
+  --fs-h1: clamp(2.5rem, 4vw, 4.5rem);          /* 40 → 72px */
+  --fs-h2: clamp(1.75rem, 2.6vw, 3rem);         /* 28 → 48px */
+  --fs-lead: clamp(1rem, 1.1vw, 1.1875rem);     /* 16 → 19px */
+  --fw-head: 600;
+
+  /* Layout: maks ~64px luft på sidene på desktop */
+  --gutter: clamp(20px, 4.4vw, 64px);
+  --container-max: 1800px;
+  --section-y: clamp(64px, 6.5vw, 112px);
+
+  --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(15, 45, 82, .05), 0 4px 14px -6px rgba(15, 45, 82, .14);
+  --shadow-md: 0 1px 2px rgba(15, 45, 82, .04), 0 14px 32px -14px rgba(15, 45, 82, .22);
+  --shadow-lg: 0 2px 4px rgba(15, 45, 82, .04), 0 30px 60px -30px rgba(15, 45, 82, .35);
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* =========================================================================
+   2. BASE
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; font-family: var(--font); font-size: 1rem; line-height: 1.6;
+  color: var(--text); background: var(--white);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01"; overflow-x: hidden;
+}
+img, svg, video, iframe { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { color: var(--navy-800); font-weight: var(--fw-head); letter-spacing: -0.025em; line-height: 1.12; }
+address { font-style: normal; }
+.icon { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.icon--fill { fill: currentColor; stroke: none; }
+
+.container { width: min(100% - var(--gutter) * 2, var(--container-max)); margin-inline: auto; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+:focus-visible { outline: 2px solid var(--blue-500); outline-offset: 3px; border-radius: 6px; }
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--navy-800); color: #fff; padding: 10px 16px; border-radius: 8px; transition: top .2s; }
+.skip-link:focus { top: 16px; }
+
+.eyebrow[class] {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy-800); margin-bottom: 16px;
+}
+.eyebrow--red[class] { color: #cf2f37; }
+.eyebrow .accent { color: #cf2f37; }
+
+/* Myk inntoning når seksjoner kommer til syne */
+.js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+.js [data-reveal="2"] { transition-delay: .08s; }
+.js [data-reveal="3"] { transition-delay: .16s; }
+
+/* =========================================================================
+   3. BUTTONS
+   ========================================================================= */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 50px; padding: 0 24px; border-radius: var(--r-pill);
+  font-size: .9375rem; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap;
+  transition: background-color .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.btn .icon { font-size: 19px; }
+.btn .icon--arrow { font-size: 16px; transition: transform .25s var(--ease); }
+.btn:hover .icon--arrow { transform: translateX(3px); }
+.btn--primary { background: var(--blue-600); color: #fff; box-shadow: 0 8px 18px -10px rgba(29, 85, 147, .7); }
+.btn--primary:hover { background: var(--navy-700); }
+.btn--white { background: #fff; color: var(--navy-800); box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .45); }
+.btn--white:hover { background: #eef4fb; }
+.btn--ghost { color: #fff; background: transparent; border: 1px solid rgba(255, 255, 255, .45); }
+.btn--ghost:hover { background: #fff; color: var(--navy-800); border-color: #fff; }
+.btn--outline { background: transparent; color: var(--navy-800); border: 1px solid #a9bdd3; }
+.btn--outline:hover { border-color: var(--navy-800); background: #fff; }
+
+/* =========================================================================
+   4. HEADER – hvit tekst over mørk hero, hvit bakgrunn etter scroll
+   ========================================================================= */
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; padding: 20px 0; transition: padding .3s var(--ease), background-color .3s var(--ease), box-shadow .3s var(--ease); }
+.site-header.is-scrolled { padding: 10px 0; background: #fff; box-shadow: 0 1px 0 var(--line), 0 8px 24px -18px rgba(15, 45, 82, .25); }
+.header-inner { display: flex; align-items: center; gap: 28px; }
+
+.logo { display: inline-flex; align-items: center; gap: 10px; color: var(--navy-800); flex: none; transition: color .3s; }
+.logo__mark { width: 40px; height: 40px; }
+.logo__text { display: flex; flex-direction: column; line-height: 1; }
+.logo__name { font-size: 1.0625rem; font-weight: 700; letter-spacing: .01em; }
+.logo__sub { font-size: .6875rem; font-weight: 500; letter-spacing: .2em; margin-top: 4px; opacity: .85; }
+
+.main-nav { margin-left: auto; }
+.main-nav ul { display: flex; gap: 26px; }
+.main-nav a { position: relative; display: block; padding: 6px 0; white-space: nowrap; font-size: .9375rem; font-weight: 500; color: var(--navy-800); transition: color .3s, opacity .2s; }
+.main-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1.5px; border-radius: 2px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.main-nav a:hover::after, .main-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.main-nav .has-sub { position: relative; }
+.main-nav .has-sub > a { display: inline-flex; align-items: center; gap: 5px; }
+.sub-chev { font-size: 14px; stroke-width: 2; transition: transform .25s var(--ease); }
+.has-sub:hover .sub-chev, .has-sub:focus-within .sub-chev { transform: rotate(180deg); }
+.subnav {
+  position: absolute; left: -20px; top: calc(100% + 16px); width: max-content; padding: 8px;
+  background: #fff; border-radius: 12px; box-shadow: 0 30px 60px -24px rgba(7, 29, 56, .38), 0 0 0 1px rgba(15, 45, 82, .06);
+  opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+}
+.subnav::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 18px; }
+.has-sub:hover .subnav, .has-sub:focus-within .subnav { opacity: 1; visibility: visible; transform: none; }
+.subnav ul { display: grid; grid-template-columns: repeat(2, max-content); gap: 2px 4px; }
+.site-header .main-nav .subnav a.subnav__link {
+  display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 8px; white-space: nowrap;
+  font-size: .875rem; font-weight: 500; color: var(--navy-800); opacity: 1; transition: background-color .2s;
+}
+.site-header .main-nav .subnav a.subnav__link::after { display: none; }
+.subnav ul a.subnav__link::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--red-500); flex: none; }
+.site-header .main-nav .subnav a.subnav__link:hover { background: var(--sky-100); }
+
+.header-actions { display: flex; align-items: center; gap: 10px; margin-left: 36px; }
+.header-actions .lang { margin-left: 2px; }
+.phone-pill {
+  display: inline-flex; align-items: center; gap: 9px; height: 42px; padding: 0 18px;
+  background: #fff; border: 1px solid transparent; border-radius: var(--r-pill); box-shadow: var(--shadow-sm);
+  font-size: .875rem; font-weight: 600; color: var(--navy-800);
+  transition: background-color .3s, color .3s, border-color .3s, box-shadow .3s;
+}
+.phone-pill .icon { font-size: 15px; }
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 9px; height: 42px; padding: 0 18px;
+  background: var(--red-500); color: #fff; border-radius: var(--r-pill);
+  font-size: .875rem; font-weight: 500; white-space: nowrap;
+  box-shadow: 0 8px 20px -10px rgba(229, 38, 46, .8); transition: background-color .25s var(--ease);
+}
+.btn-cta:hover { background: var(--red-600); }
+.btn-cta .icon { font-size: 15px; transition: transform .25s var(--ease); }
+.btn-cta:hover .icon { transform: translateX(3px); }
+.menu-toggle { display: none; width: 42px; height: 42px; border-radius: 50%; background: #fff; border: 1px solid transparent; box-shadow: var(--shadow-sm); color: var(--navy-800); align-items: center; justify-content: center; transition: background-color .3s, color .3s, border-color .3s; }
+.menu-toggle .icon { font-size: 20px; }
+
+/* Over hero (ikke scrollet) */
+.site-header:not(.is-scrolled) .logo,
+.site-header:not(.is-scrolled) .main-nav a { color: #fff; }
+.site-header:not(.is-scrolled) .main-nav a:not([aria-current]) { opacity: .85; }
+.site-header:not(.is-scrolled) .main-nav a:hover { opacity: 1; }
+.site-header:not(.is-scrolled) .phone-pill,
+.site-header:not(.is-scrolled) .menu-toggle {
+  background: transparent; border-color: rgba(255, 255, 255, .4); color: #fff; box-shadow: none;
+}
+.site-header:not(.is-scrolled) .phone-pill:hover { background: #fff; color: var(--navy-800); }
+
+/* Språkvelger */
+.lang { position: relative; }
+.lang__btn {
+  display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 10px 0 12px; border-radius: 10px;
+  font-size: .8125rem; font-weight: 600; letter-spacing: .04em; color: var(--navy-800); transition: background-color .2s, color .3s;
+}
+.lang__btn:hover, .lang.is-open .lang__btn { background: rgba(15, 45, 82, .06); }
+.lang__flag { width: 22px; height: 16px; border-radius: 3px; flex: none; box-shadow: 0 0 0 1px rgba(15, 45, 82, .12); }
+.lang__chev { font-size: 14px; stroke-width: 2; transition: transform .25s var(--ease); }
+.lang.is-open .lang__chev { transform: rotate(180deg); }
+.lang__menu {
+  position: absolute; right: 0; top: calc(100% + 10px); min-width: 200px; padding: 6px;
+  background: var(--navy-900); border-radius: 14px; box-shadow: 0 24px 48px -20px rgba(7, 29, 56, .6);
+  opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+}
+.lang.is-open .lang__menu { opacity: 1; visibility: visible; transform: none; }
+.lang__menu button {
+  width: 100%; display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px;
+  font-size: .9375rem; font-weight: 500; color: #fff; text-align: left; transition: background-color .2s;
+}
+.lang__menu button:hover { background: rgba(255, 255, 255, .07); }
+.lang__menu button[aria-selected="true"] { background: var(--navy-700); }
+.lang__check { margin-left: auto; font-size: 18px; stroke-width: 2; opacity: 0; }
+.lang__menu button[aria-selected="true"] .lang__check { opacity: 1; }
+.site-header:not(.is-scrolled) .lang__btn { color: #fff; }
+.site-header:not(.is-scrolled) .lang__btn:hover, .site-header:not(.is-scrolled) .lang.is-open .lang__btn { background: rgba(255, 255, 255, .12); }
+
+/* Mobilmeny */
+.mobile-nav { position: fixed; inset: 0; z-index: 60; display: flex; justify-content: flex-end; background: rgba(8, 32, 60, .4); opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s; }
+.mobile-nav.is-open { opacity: 1; visibility: visible; }
+.mobile-nav__panel { width: min(100%, 360px); height: 100%; background: #fff; padding: 18px 22px 28px; display: flex; flex-direction: column; transform: translateX(24px); transition: transform .35s var(--ease); overflow-y: auto; }
+.mobile-nav.is-open .mobile-nav__panel { transform: none; }
+.mobile-nav__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.mobile-nav__close { width: 40px; height: 40px; border-radius: 50%; background: var(--sky-100); display: grid; place-items: center; color: var(--navy-800); }
+.mobile-nav__close .icon { font-size: 18px; }
+.mobile-nav nav > a, .mnav-sub summary { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; font-size: 1.0625rem; font-weight: 500; color: var(--navy-800); border-bottom: 1px solid var(--line); }
+.mnav-sub summary { list-style: none; cursor: pointer; }
+.mnav-sub summary::-webkit-details-marker { display: none; }
+.mnav-sub summary .icon { font-size: 18px; stroke-width: 2; transition: transform .25s var(--ease); }
+.mnav-sub[open] summary .icon { transform: rotate(180deg); }
+.mnav-sub > div { display: grid; padding: 6px 0 10px 14px; border-bottom: 1px solid var(--line); }
+.mnav-sub > div a { padding: 9px 0; font-size: .9375rem; color: var(--text); }
+.mobile-nav__actions { margin-top: auto; display: grid; gap: 10px; padding-top: 28px; }
+.mobile-nav__actions .phone-pill, .mobile-nav__actions .btn-cta { justify-content: center; height: 48px; }
+.mobile-nav__actions .phone-pill { background: var(--sky-100); box-shadow: none; }
+.mobile-nav__note { font-size: .8125rem; color: var(--muted); text-align: center; margin-top: 4px; }
+
+/* =========================================================================
+   5. HERO – mørk, med klinikkbilde
+   ========================================================================= */
+.hero { position: relative; overflow: hidden; isolation: isolate; min-height: clamp(640px, 50vw, 920px); display: flex; align-items: center; background: #0d2c57; color: #fff; }
+.hero__bg { position: absolute; inset: 0; z-index: -1; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; }
+.hero__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(9, 35, 74, .94) 0%, rgba(11, 40, 82, .8) 26%, rgba(12, 42, 84, .34) 48%, rgba(12, 42, 84, 0) 64%),
+    linear-gradient(180deg, rgba(7, 26, 56, .55) 0%, rgba(7, 26, 56, 0) 22%),
+    linear-gradient(0deg, rgba(7, 26, 56, .5) 0%, rgba(7, 26, 56, 0) 28%);
+}
+.hero__content { position: relative; padding: clamp(130px, 10vw, 170px) 0 clamp(72px, 6vw, 110px); }
+.hero__inner { max-width: clamp(520px, 42vw, 780px); }
+.hero .eyebrow[class] { color: rgba(255, 255, 255, .86); margin-bottom: 22px; }
+.hero h1 { color: #fff; font-size: var(--fs-h1); line-height: 1.04; letter-spacing: -0.035em; margin-bottom: 24px; }
+.hero__lead { font-size: var(--fs-lead); line-height: 1.7; color: rgba(255, 255, 255, .82); max-width: 33em; margin-bottom: 36px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 52px; }
+.hero__actions .btn { height: 54px; padding: 0 26px; }
+
+.quick-facts { display: flex; align-items: center; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .16); width: fit-content; }
+.quick-fact { display: flex; align-items: center; gap: 12px; padding-right: 26px; margin-right: 26px; border-right: 1px solid rgba(255, 255, 255, .16); }
+.quick-fact:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+.quick-fact .icon { font-size: 28px; color: #fff; stroke-width: 1.4; }
+.quick-fact strong { display: block; font-size: .875rem; font-weight: 600; color: #fff; line-height: 1.35; }
+.quick-fact span { display: block; font-size: .8125rem; color: rgba(255, 255, 255, .68); line-height: 1.35; }
+
+.hero__badge {
+  position: absolute; right: 0; bottom: clamp(40px, 4vw, 64px);
+  display: flex; align-items: center; gap: 14px; padding: 14px 20px 14px 18px;
+  border-radius: 16px; background: #fff; box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .55);
+  font-size: .875rem; font-weight: 500; line-height: 1.35; color: var(--navy-800);
+}
+.hero__badge-dot { position: relative; width: 10px; height: 10px; border-radius: 50%; background: var(--red-500); flex: none; }
+.hero__badge-dot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid var(--red-500); opacity: 0; animation: pulse 2.4s var(--ease) infinite; }
+@keyframes pulse { 0% { transform: scale(.5); opacity: .8; } 100% { transform: scale(1.4); opacity: 0; } }
+
+/* =========================================================================
+   6. BEHANDLINGER – konkav karusell
+   ========================================================================= */
+.treatments { position: relative; overflow: hidden; padding: var(--section-y) 0 calc(var(--section-y) - 8px); --cc-floor: #f1f6fb; background: var(--cc-floor); }
+.treatments__leaf { position: absolute; z-index: 0; right: -60px; bottom: -40px; width: 240px; opacity: .45; pointer-events: none; -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 100%); mask-image: radial-gradient(closest-side, #000 55%, transparent 100%); }
+.section-head { text-align: center; margin-bottom: 12px; }
+.section-head > * { max-width: 720px; margin-inline: auto; }
+.section-head .eyebrow { justify-content: center; }
+.section-head h2 { font-size: var(--fs-h2); margin-bottom: 16px; }
+.section-head p { font-size: var(--fs-lead); line-height: 1.65; }
+
+.cc { position: relative; z-index: 1; }
+.cc-stage { position: relative; display: none; height: var(--cc-h, 420px); perspective: var(--cc-p, 1000px); perspective-origin: 50% var(--cc-y, 50%); touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; outline: none; }
+.cc-stage.is-dragging { cursor: grabbing; }
+.cc-stage:focus-visible { outline: 2px solid var(--blue-500); outline-offset: -4px; border-radius: 12px; }
+.cc-card { position: absolute; left: 50%; top: var(--cc-y, 50%); width: 0; height: 0; transform-style: preserve-3d; }
+.cc-strip { position: absolute; background-repeat: no-repeat; backface-visibility: hidden; will-change: transform; }
+.cc-strip.is-first { border-radius: var(--r-md) 0 0 var(--r-md); }
+.cc-strip.is-last  { border-radius: 0 var(--r-md) var(--r-md) 0; }
+.cc-refl {
+  position: absolute; background-repeat: no-repeat; border-radius: var(--r-md); pointer-events: none; backface-visibility: hidden;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .08) 45%, rgba(0, 0, 0, 0) 85%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .08) 45%, rgba(0, 0, 0, 0) 85%);
+}
+.cc-stage:not(.is-dragging) .cc-card:not(.is-active) .cc-strip { cursor: pointer; }
+.cc-caption { position: relative; z-index: 1; text-align: center; margin-top: var(--cc-caption-gap, -60px); min-height: 92px; display: none; transition: opacity .25s var(--ease), transform .25s var(--ease); }
+.cc-caption.is-changing { opacity: 0; transform: translateY(6px); }
+.cc-caption h3 { font-size: clamp(1.125rem, 1.25vw, 1.375rem); letter-spacing: -0.015em; margin-bottom: 4px; }
+.cc-caption p { font-size: clamp(.9375rem, .95vw, 1.0625rem); color: var(--muted); }
+.cc-caption a { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: .875rem; font-weight: 600; color: var(--blue-600); }
+.cc-caption a .icon { font-size: 15px; stroke-width: 2; transition: transform .25s var(--ease); }
+.cc-caption a:hover .icon { transform: translateX(3px); }
+.cc-controls { display: none; align-items: center; justify-content: center; gap: 18px; margin-top: 18px; }
+.cc-btn { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--navy-800); box-shadow: var(--shadow-sm); transition: box-shadow .25s, background-color .25s, color .25s; }
+.cc-btn:hover { background: var(--navy-800); color: #fff; }
+.cc-btn .icon { font-size: 16px; stroke-width: 2; }
+.cc-count { font-size: .8125rem; font-weight: 600; color: var(--navy-800); font-variant-numeric: tabular-nums; min-width: 56px; text-align: center; letter-spacing: .04em; }
+.cc-count span { color: #9aaec4; font-weight: 500; }
+.cc.is-ready .cc-stage { display: block; }
+.cc.is-ready .cc-caption { display: block; }
+.cc.is-ready .cc-controls { display: flex; }
+.cc.is-ready .cc-source { display: none; }
+.cc-source { display: flex; gap: 16px; overflow-x: auto; padding: 32px 0 8px; scroll-snap-type: x mandatory; }
+.cc-source li { flex: 0 0 260px; scroll-snap-align: start; }
+.cc-source img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--r-md); margin-bottom: 12px; }
+.cc-source h3 { font-size: 1.0625rem; margin-bottom: 4px; }
+.cc-source p { font-size: .875rem; color: var(--muted); }
+
+/* =========================================================================
+   7. OM OSS – ren bildekomposisjon
+   ========================================================================= */
+.about { position: relative; padding: var(--section-y) 0; background: #fff; }
+.about__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(40px, 6vw, 112px); align-items: center; }
+.about h2 { font-size: var(--fs-h2); margin-bottom: 20px; }
+.about h2 .hl { color: #2366ad; }
+.about__text > p { font-size: var(--fs-lead); line-height: 1.75; margin-bottom: 32px; max-width: 34em; }
+.about__visual { position: relative; padding: 0 0 56px 56px; }
+.about__main { position: relative; border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 16 / 11; box-shadow: var(--shadow-lg); background: var(--sky-200); }
+.about__main img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+.about__main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(200deg, rgba(10, 36, 74, 0) 50%, rgba(10, 36, 74, .18) 100%); }
+.about__inset { position: absolute; left: 0; bottom: 0; width: 40%; aspect-ratio: 4 / 4.4; border-radius: var(--r-lg); overflow: hidden; border: 6px solid #fff; box-shadow: var(--shadow-lg); background: var(--sky-200); }
+.about__inset img { width: 100%; height: 100%; object-fit: cover; }
+.about__note {
+  position: absolute; left: calc(56px + 24px); top: 24px; width: min(250px, 42%); padding: 20px 22px; border-radius: var(--r-lg);
+  background: #fff; box-shadow: 0 18px 36px -20px rgba(15, 45, 82, .4); font-size: .9375rem; line-height: 1.5; color: var(--navy-800);
+}
+.about__note::after { content: ""; display: block; width: 28px; height: 1.5px; background: var(--red-500); margin-top: 14px; }
+
+.feature-row { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(48px, 5vw, 80px); border-top: 1px solid var(--line); }
+.feature { display: flex; align-items: flex-start; gap: 14px; padding: 28px 28px 4px; border-left: 1px solid var(--line); }
+.feature:first-child { border-left: 0; padding-left: 0; }
+.feature__icon { flex: none; color: var(--red-500); padding-top: 1px; }
+.feature .icon { display: block; font-size: 24px; stroke-width: 1.6; }
+.feature strong { display: block; font-size: .9375rem; font-weight: 600; color: var(--navy-800); line-height: 1.35; margin-bottom: 3px; }
+.feature span:not(.feature__icon) { display: block; font-size: .875rem; color: var(--muted); line-height: 1.45; }
+
+/* =========================================================================
+   8. VIDEO – parallakse-karusell som glir av seg selv i en uendelig løkke
+   ========================================================================= */
+.videos {
+  position: relative; overflow: hidden; isolation: isolate; color: #fff;
+  padding: var(--section-y) 0; background: #0d3d86;
+}
+.videos__bg { position: absolute; inset: 0; z-index: -1; }
+.videos__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.videos__bg::after { content: ""; position: absolute; inset: 0; background: rgba(6, 24, 52, .3); }
+.videos__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: clamp(36px, 3.5vw, 56px); }
+.videos__head > div:first-child { max-width: 640px; text-shadow: 0 1px 14px rgba(5, 22, 48, .55); }
+.videos .eyebrow[class] { color: #fff; }
+.videos h2 { color: #fff; font-size: var(--fs-h2); margin-bottom: 16px; }
+.videos__head p { font-size: var(--fs-lead); line-height: 1.7; color: rgba(255, 255, 255, .86); }
+.videos__actions { display: flex; align-items: center; gap: 12px; flex: none; }
+.videos__actions .btn .icon { font-size: 21px; color: var(--navy-800); }
+
+.px {
+  --px-w: clamp(240px, 19vw, 360px);
+  --px-gap: clamp(24px, 2.6vw, 48px);
+  position: relative; overflow: hidden; padding: 6px 0 14px;
+  touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none;
+}
+.px.is-dragging { cursor: grabbing; }
+.px-rail { display: flex; gap: var(--px-gap); width: max-content; padding-left: var(--gutter); will-change: transform; }
+.px-card {
+  position: relative; flex: none; width: var(--px-w); aspect-ratio: 5 / 6;
+  border-radius: 14px; overflow: hidden; text-align: left; color: #fff; background: var(--navy-900);
+  box-shadow: 0 30px 60px -32px rgba(0, 0, 0, .85);
+}
+.px-media { position: absolute; inset: 0; overflow: hidden; }
+.px-media img {
+  position: absolute; top: 0; left: -12.5%; width: 125%; max-width: none; height: 100%; object-fit: cover;
+  will-change: transform; pointer-events: none; transition: scale .9s var(--ease);
+}
+.px-card:hover .px-media img { scale: 1.05; }
+.px-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 29, 56, .45) 0%, rgba(7, 29, 56, 0) 24%, rgba(7, 29, 56, 0) 50%, rgba(7, 29, 56, .92) 100%); }
+.px-top { position: absolute; left: 20px; right: 20px; top: 20px; display: flex; align-items: center; justify-content: space-between; }
+.px-num { font-size: .75rem; font-weight: 600; letter-spacing: .16em; font-variant-numeric: tabular-nums; }
+.px-time { padding: 5px 11px; border-radius: 999px; background: var(--navy-950); font-size: .75rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.px-play {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: 66px; height: 66px; border-radius: 50%;
+  display: grid; place-items: center; background: #fff; color: var(--navy-800);
+  box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .6); transition: transform .45s var(--ease), background-color .3s, color .3s;
+}
+.px-play::before { content: ""; position: absolute; inset: -9px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .55); transition: inset .45s var(--ease), opacity .45s; }
+.px-play .icon { font-size: 20px; margin-left: 3px; }
+.px-card:hover .px-play { transform: scale(1.08); background: var(--red-500); color: #fff; }
+.px-card:hover .px-play::before { inset: -14px; opacity: 0; }
+.px-meta { position: absolute; left: 22px; right: 22px; bottom: 22px; }
+.px-title { display: block; font-size: clamp(1.0625rem, 1.2vw, 1.375rem); font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; }
+.px-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, .22); width: 100%; font-size: .8125rem; font-weight: 500; color: rgba(255, 255, 255, .85); }
+.px-cta .icon { font-size: 14px; stroke-width: 2; margin-left: auto; transition: transform .3s var(--ease); }
+.px-card:hover .px-cta .icon { transform: translateX(4px); }
+
+.round-btn { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: var(--navy-900); color: #fff; box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .6); transition: background-color .25s, color .25s; }
+.round-btn .icon { font-size: 17px; }
+.round-btn:hover { background: #fff; color: var(--navy-800); }
+
+.video-modal { width: min(100% - 32px, 1000px); padding: 0; border: 0; border-radius: 20px; background: #000; overflow: visible; }
+.video-modal::backdrop { background: rgba(5, 18, 36, .88); }
+.video-modal__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: #0b1b30; }
+.video-modal__frame > * { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.video-modal__empty { display: grid; place-items: center; color: #fff; text-align: center; }
+.video-modal__empty img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; }
+.video-modal__empty p { position: relative; font-size: 1rem; }
+.video-modal__close { position: absolute; right: -4px; top: -52px; width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--navy-800); display: grid; place-items: center; }
+.video-modal__close .icon { font-size: 18px; }
+
+/* =========================================================================
+   9. TIMEBESTILLING – bilde med ringeknapp + åpningstider som liste
+   ========================================================================= */
+.booking { padding: var(--section-y) 0; background: #fff; }
+.booking__grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(40px, 6vw, 112px); align-items: center; }
+.booking__media { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 5 / 5.4; background: var(--navy-900); }
+.booking__media img { width: 100%; height: 100%; object-fit: cover; object-position: 28% 40%; }
+.booking__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 29, 56, 0) 45%, rgba(7, 29, 56, .7) 100%); }
+.call-btn {
+  position: absolute; z-index: 1; left: clamp(16px, 2vw, 28px); right: clamp(16px, 2vw, 28px); bottom: clamp(16px, 2vw, 28px);
+  display: flex; align-items: center; gap: 18px; padding: 20px 24px; border-radius: 16px;
+  background: var(--red-500); color: #fff; box-shadow: 0 20px 40px -20px rgba(229, 38, 46, .8);
+  transition: background-color .25s var(--ease), transform .25s var(--ease);
+}
+.call-btn:hover { background: var(--red-600); transform: translateY(-2px); }
+.call-btn__icon { width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--red-500); display: grid; place-items: center; flex: none; }
+.call-btn .icon { font-size: 22px; }
+.call-btn span:not(.call-btn__icon) { display: block; font-size: .875rem; font-weight: 500; line-height: 1.35; opacity: .92; }
+.call-btn strong { display: block; font-size: clamp(1.375rem, 1.9vw, 1.875rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.call-btn__arrow { margin-left: auto; font-size: 22px; transition: transform .25s var(--ease); }
+.call-btn:hover .call-btn__arrow { transform: translateX(4px); }
+
+.booking h2 { font-size: var(--fs-h2); margin-bottom: 18px; }
+.booking__text > p { font-size: var(--fs-lead); line-height: 1.7; max-width: 34em; }
+.hours { margin: 32px 0 24px; border-top: 1px solid var(--line); }
+.hours-row { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.hours-row__icon { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #fdeeee; color: var(--red-500); }
+.hours-row .icon { font-size: 21px; stroke-width: 1.7; }
+.hours-row h3 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 6px; }
+.hours-times { display: grid; gap: 4px; }
+.hours-times p { font-size: .9375rem; color: var(--muted); }
+.hours-times b { color: var(--navy-800); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hours-row p.small { margin-top: 6px; font-size: .875rem; color: var(--red-600); font-weight: 500; }
+.hours-row > div > p:not(.small), .hours-row address p { font-size: .9375rem; color: var(--muted); line-height: 1.6; }
+.booking__note { font-size: .9375rem; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+
+/* =========================================================================
+   9b. PRISER
+   ========================================================================= */
+.pricing { padding: var(--section-y) 0; background: #f4f7fb; border-top: 1px solid var(--line); }
+.pricing__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(40px, 6vw, 112px); align-items: start; }
+.pricing__intro { position: sticky; top: 110px; }
+.pricing h2 { font-size: var(--fs-h2); margin-bottom: 16px; }
+.pricing__intro > p { font-size: var(--fs-lead); line-height: 1.7; margin-bottom: 32px; max-width: 30em; }
+.price-terms { margin: 0 0 24px; border-top: 1px solid var(--line); }
+.price-terms div { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.price-terms dt { font-size: .9375rem; color: var(--navy-800); font-weight: 500; }
+.price-terms dd { margin: 0; font-size: .9375rem; font-weight: 600; color: var(--red-600); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.price-note { padding: 18px 20px; margin-bottom: 28px; background: #fff; border-left: 3px solid var(--red-500); border-radius: 0 6px 6px 0; }
+.price-note h3 { font-size: .9375rem; margin-bottom: 4px; }
+.price-note p { font-size: .875rem; line-height: 1.6; color: var(--muted); }
+.pricing__intro .btn-cta { height: 46px; padding: 0 20px; font-size: .875rem; }
+.pricing__table { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: clamp(24px, 3vw, 44px) clamp(24px, 3vw, 48px); box-shadow: 0 24px 48px -36px rgba(10, 36, 70, .35); }
+.price-group + .price-group { margin-top: 36px; }
+.price-group h3 { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.price-group h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.price-list li { border-bottom: 1px dashed #dbe3ec; }
+.price-list a { display: flex; align-items: center; gap: 16px; padding: 16px 0; }
+.price-list a:hover .price-name { color: var(--blue-600); }
+.price-name { display: block; font-size: 1rem; color: var(--navy-800); font-weight: 500; transition: color .2s; }
+.price-name small { display: block; margin-top: 2px; font-size: .8125rem; font-weight: 400; color: var(--muted); }
+.price-list li:last-child { border-bottom: 0; }
+.price-list b { margin-left: auto; font-size: 1rem; font-weight: 600; color: var(--navy-800); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* =========================================================================
+   10. KONTAKT / KART – mørkt panel + kart i ett kort
+   ========================================================================= */
+.location { padding: var(--section-y) 0; background: #f2f6fa; }
+.contact-card {
+  display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  border-radius: 28px; overflow: hidden; background: var(--navy-900);
+  box-shadow: 0 40px 80px -40px rgba(10, 36, 70, .55);
+}
+.contact-panel { position: relative; isolation: isolate; padding: clamp(36px, 4.4vw, 80px); color: #fff; }
+.contact-panel__bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 78% 60%; }
+.contact-panel::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 29, 56, .9) 0%, rgba(7, 29, 56, .78) 50%, rgba(7, 29, 56, .5) 100%), linear-gradient(0deg, rgba(7, 29, 56, .55) 0%, rgba(7, 29, 56, 0) 40%); }
+.contact-panel .eyebrow[class] { color: #ff8a8e; }
+.contact-panel h2 { color: #fff; font-size: var(--fs-h2); margin-bottom: 16px; }
+.contact-panel > p { font-size: var(--fs-lead); line-height: 1.7; color: rgba(255, 255, 255, .8); margin-bottom: 32px; }
+.contact-rows { border-top: 1px solid rgba(255, 255, 255, .14); margin-bottom: 36px; }
+.contact-row { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.contact-row__icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: #fff; color: var(--navy-800); flex: none; }
+.contact-row__icon .icon { font-size: 21px; }
+.contact-row strong { display: block; font-size: 1rem; font-weight: 600; color: #fff; line-height: 1.4; word-break: break-word; }
+.contact-row span:not(.contact-row__icon), .contact-row address { display: block; font-size: .875rem; color: rgba(255, 255, 255, .68); line-height: 1.5; }
+.contact-row a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact-actions .btn, .contact-actions .btn-cta { height: 44px; padding: 0 18px; font-size: .875rem; gap: 8px; }
+.contact-actions .btn-cta { box-shadow: 0 10px 22px -14px rgba(229, 38, 46, .9); }
+.contact-actions .btn-cta .icon { font-size: 14px; }
+.contact-side { display: grid; min-height: 560px; }
+.contact-map { position: relative; overflow: hidden; min-height: 0; background: #e8eef5; }
+.contact-map iframe { position: absolute; left: 0; top: -110px; width: 100%; height: calc(100% + 110px); border: 0; filter: saturate(.85) contrast(.98); }
+
+/* =========================================================================
+   11. FOOTER
+   ========================================================================= */
+.site-footer { position: relative; overflow: hidden; color: rgba(255, 255, 255, .78); background: var(--navy-950); }
+.site-footer__bg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 72%; object-fit: cover; object-position: center bottom; opacity: .5; }
+.site-footer::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--navy-950) 0%, rgba(7, 29, 56, .55) 60%, rgba(7, 29, 56, .7) 100%); z-index: 1; }
+.site-footer > .container { position: relative; z-index: 2; }
+.footer-grid { display: grid; grid-template-columns: 3.6fr 1.6fr 2.4fr 3fr; gap: 40px; padding: clamp(56px, 5vw, 80px) 0 52px; }
+.footer-brand .logo { color: #fff; gap: 12px; margin-bottom: 20px; }
+.footer-brand .logo__mark { width: 52px; height: 52px; }
+.footer-brand .logo__name { font-size: 1.25rem; }
+.footer-brand .logo__sub { font-size: .75rem; margin-top: 5px; }
+.footer-brand p { font-size: .875rem; line-height: 1.75; max-width: 24em; margin-bottom: 20px; }
+.socials { display: flex; gap: 10px; }
+.socials a { width: 38px; height: 38px; display: grid; place-items: center; color: #fff; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .2); transition: background-color .2s, border-color .2s; }
+.socials a:hover { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .45); }
+.socials .icon { font-size: 17px; }
+.footer-col h3 { color: #fff; font-size: .9375rem; font-weight: 600; letter-spacing: -0.01em; margin: 4px 0 18px; }
+.footer-col ul { display: grid; gap: 8px; }
+.footer-col a { font-size: .875rem; transition: color .2s; }
+.footer-col a:hover { color: #fff; }
+.contact-list { gap: 12px !important; }
+.contact-list li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: .875rem; line-height: 1.6; }
+.contact-list .icon { font-size: 17px; color: #fff; margin-top: 2px; }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, .14); padding: 22px 0 28px; }
+.footer-bottom__row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer-bottom small { font-size: .8125rem; }
+.legal { display: flex; align-items: center; }
+.legal li + li::before { content: "|"; margin: 0 14px; color: rgba(255, 255, 255, .4); }
+.legal a { font-size: .8125rem; }
+.legal a:hover { color: #fff; }
+.disclaimer { margin-top: 12px; font-size: .75rem; line-height: 1.55; color: rgba(255, 255, 255, .5); max-width: 60em; }
+
+/* =========================================================================
+   12. RESPONSIVE
+   ========================================================================= */
+@media (min-width: 1600px) {
+  .btn { height: 54px; padding: 0 28px; font-size: 1rem; }
+  .hero__actions .btn { height: 58px; padding: 0 30px; }
+  .main-nav a { font-size: 1rem; }
+  .quick-fact strong, .feature strong { font-size: 1rem; }
+  .quick-fact span, .feature span { font-size: .9375rem; }
+  .hours-row h3, .hours-times p { font-size: 1.0625rem; }
+}
+@media (min-width: 1281px) and (max-width: 1599px) { .phone-pill--header { display: none; } }
+@media (min-width: 1281px) and (max-width: 1480px) {
+  .main-nav ul { gap: 18px; }
+  .main-nav a { font-size: .875rem; }
+  .header-actions { margin-left: 24px; }
+  .header-inner { gap: 20px; }
+}
+@media (max-width: 1280px) {
+  .main-nav, .header-actions .btn-cta { display: none; }
+  .header-actions { margin-left: auto; }
+  .menu-toggle { display: inline-flex; }
+  .lang { order: -1; }
+}
+@media (max-width: 1240px) {
+  .feature-row { grid-template-columns: repeat(2, 1fr); }
+  .feature:nth-child(3) { border-left: 0; padding-left: 0; }
+  .feature:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 24px; }
+}
+@media (max-width: 1024px) {
+  .main-nav, .header-actions .btn-cta { display: none; }
+  .header-actions { margin-left: auto; }
+  .menu-toggle { display: inline-flex; }
+  .lang { order: -1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .about__grid, .booking__grid, .contact-card, .pricing__grid { grid-template-columns: 1fr; }
+  .pricing__intro { position: static; }
+  .booking__media { aspect-ratio: 4 / 3; max-width: 760px; }
+  .contact-side { min-height: 0; }
+  .contact-map { min-height: 340px; }
+  .about__visual { max-width: 760px; }
+  .hero__inner { max-width: 600px; }
+  .hero__bg::after { background: linear-gradient(90deg, rgba(9, 35, 74, .94) 0%, rgba(11, 40, 82, .82) 40%, rgba(12, 42, 84, .45) 70%, rgba(12, 42, 84, .2) 100%), linear-gradient(180deg, rgba(7, 26, 56, .55) 0%, rgba(7, 26, 56, 0) 22%); }
+}
+@media (max-width: 900px) {
+  .videos__head { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .hero__badge { position: static; margin-top: 32px; width: fit-content; }
+}
+@media (max-width: 700px) {
+  .hero { min-height: 0; align-items: flex-end; background: #09234a; }
+  .hero__bg { bottom: auto; height: 540px; }
+  .hero__bg img { object-position: 84% 50%; }
+  .hero__bg::after { background: linear-gradient(180deg, rgba(9, 35, 74, .6) 0%, rgba(9, 35, 74, 0) 20%, rgba(9, 35, 74, 0) 58%, rgba(9, 35, 74, .85) 85%, #09234a 100%); }
+  .hero__content { padding: 450px 0 44px; }
+  .hero__actions { margin-bottom: 0 !important; }
+  .quick-facts, .hero__badge { display: none !important; }
+  .quick-facts { flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; }
+  .quick-fact { border-right: 0; margin-right: 0; padding-right: 0; }
+}
+@media (max-width: 640px) {
+  .site-header { padding: 14px 0; }
+  .logo__mark { width: 36px; height: 36px; }
+  .logo__name { font-size: .9375rem; }
+  .logo__sub { font-size: .5625rem; }
+  .phone-pill--header { width: 42px; padding: 0; justify-content: center; }
+  .site-header .phone-pill--header, .site-header:not(.is-scrolled) .phone-pill--header { background: var(--red-500); border-color: var(--red-500); color: #fff; }
+  .phone-pill--header span { display: none; }
+  .lang__btn { padding: 0 6px 0 8px; gap: 6px; }
+  .lang__code { display: none; }
+  .header-actions { gap: 6px; }
+  .hero h1 { font-size: 2.375rem; }
+  .hero__actions { gap: 10px; margin-bottom: 36px; }
+  .hero__actions .btn { width: 100%; }
+  .treatments__leaf { display: none; }
+  .cc-caption { min-height: 96px; padding-inline: var(--gutter); }
+  .cc-controls { margin-top: 10px; }
+  .feature-row { grid-template-columns: 1fr; }
+  .feature { border-left: 0; padding: 20px 0; margin-top: 0 !important; }
+  .feature + .feature { border-top: 1px solid var(--line); }
+  .about__visual { padding: 0 0 36px 28px; }
+  .about__inset { width: 44%; border-width: 4px; }
+  .about__note { left: calc(28px + 12px); top: 12px; width: 58%; padding: 14px 16px; font-size: .8125rem; }
+  .about__note::after { margin-top: 10px; }
+  .px { --px-w: 70vw; --px-gap: 16px; }
+  .videos__bg img { object-position: 8% 50%; }
+  .contact-panel { padding: 32px 22px; }
+  .pricing__table { padding: 20px 18px; }
+  .price-name, .price-list b { font-size: .9375rem; }
+  .contact-card { border-radius: 22px; }
+  .booking__media { aspect-ratio: 4 / 4.2; }
+  .call-btn { padding: 16px 18px; gap: 14px; }
+  .call-btn__icon { width: 44px; height: 44px; }
+  .booking .btn--outline { white-space: normal; text-align: center; height: auto; min-height: 48px; padding: 10px 18px; }
+  .contact-map { min-height: 300px; }
+  .contact-actions .btn, .contact-actions .btn-cta { flex: 1 1 auto; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom__row { flex-direction: column; align-items: flex-start; }
+  .legal li + li::before { margin: 0 10px; }
+}
+
+/* =========================================================================
+   13. TJENESTESIDE
+   ========================================================================= */
+.page-hero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: var(--navy-900); }
+.page-hero__bg { position: absolute; inset: 0; z-index: -1; }
+.page-hero__bg picture { display: block; height: 100%; }
+.page-hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 35%; }
+.page-hero__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9, 35, 74, .9) 0%, rgba(9, 35, 74, .6) 38%, rgba(9, 35, 74, 0) 62%), linear-gradient(180deg, rgba(7, 26, 56, .5) 0%, rgba(7, 26, 56, 0) 22%); }
+.page-hero__inner { padding: clamp(128px, 10vw, 168px) 0 clamp(56px, 5vw, 88px); max-width: 100%; }
+.page-hero__inner > *:not(.crumbs):not(.page-hero__facts) { max-width: 620px; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0 0 36px; padding: 0; font-size: .8125rem; color: rgba(255, 255, 255, .65); }
+.crumbs li + li::before { content: "/"; margin-right: 8px; color: rgba(255, 255, 255, .35); }
+.crumbs a:hover { color: #fff; }
+.crumbs [aria-current] { color: #fff; }
+.page-hero .eyebrow[class] { color: #ff8a8e; }
+.page-hero h1 { color: #fff; font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1.05; letter-spacing: -0.035em; margin-bottom: 20px; }
+.page-hero__lead { font-size: var(--fs-lead); line-height: 1.7; color: rgba(255, 255, 255, .82); margin-bottom: 32px; }
+.page-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
+.btn-cta--lg { height: 50px; padding: 0 24px; font-size: .9375rem; }
+.page-hero__facts { display: flex; flex-wrap: wrap; gap: 10px 32px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, .16); font-size: .875rem; color: rgba(255, 255, 255, .75); width: fit-content; }
+.page-hero__facts b { display: block; font-size: .6875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #fff; margin-bottom: 2px; }
+
+.svc { padding: clamp(56px, 6vw, 104px) 0; background: #fff; }
+.svc__grid { display: grid; grid-template-columns: minmax(0, 1fr) clamp(320px, 22vw, 400px); gap: clamp(40px, 4.5vw, 88px); align-items: start; }
+.svc__body { min-width: 0; }
+.svc-block { padding-bottom: clamp(40px, 4vw, 56px); margin-bottom: clamp(40px, 4vw, 56px); border-bottom: 1px solid var(--line); scroll-margin-top: 100px; }
+.svc-block:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.svc-block h2 { font-size: clamp(1.5rem, 2vw, 2rem); margin-bottom: 18px; }
+.svc-block > p { font-size: var(--fs-lead); line-height: 1.75; }
+.svc-block > p + p { margin-top: 14px; }
+.svc-sub { font-size: 1rem; margin: 32px 0 12px; }
+.svc-muted { margin-top: 18px; font-size: .9375rem !important; color: var(--muted); }
+
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.checks li { position: relative; padding: 14px 0 14px 30px; border-bottom: 1px solid var(--line); font-size: .9375rem; color: var(--navy-800); }
+.checks li::before { content: ""; position: absolute; left: 2px; top: 19px; width: 12px; height: 7px; border-left: 2px solid var(--red-500); border-bottom: 2px solid var(--red-500); transform: rotate(-45deg); }
+
+.causes { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.cause { padding: 22px 22px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cause__n { display: block; font-size: .75rem; font-weight: 600; letter-spacing: .1em; color: var(--red-500); margin-bottom: 14px; font-variant-numeric: tabular-nums; }
+.cause h3 { font-size: 1rem; margin-bottom: 6px; }
+.cause p { font-size: .875rem; line-height: 1.6; color: var(--muted); }
+
+.svc-figure { margin: 0 0 clamp(40px, 4vw, 56px); }
+.svc-figure img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 40%; border-radius: 8px; }
+.svc-figure figcaption { margin-top: 10px; font-size: .8125rem; color: var(--muted); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: 44px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.steps li:first-child { padding-top: 0; }
+.steps__n { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--navy-900); color: #fff; font-size: .9375rem; font-weight: 600; }
+.steps h3 { font-size: 1rem; margin: 2px 0 4px; }
+.steps p { font-size: .9375rem; line-height: 1.6; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { padding: 8px 14px; border-radius: 6px; background: var(--sky-100); color: var(--navy-800); font-size: .875rem; font-weight: 500; }
+
+.tips { counter-reset: t; }
+.tips li { counter-increment: t; display: grid; grid-template-columns: 32px 1fr; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: .9375rem; color: var(--navy-800); }
+.tips li::before { content: counter(t, decimal-leading-zero); font-size: .75rem; font-weight: 600; color: var(--red-500); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.alert { display: grid; grid-template-columns: 24px 1fr; gap: 14px; margin-top: 28px; padding: 20px 22px; background: #fdf1f1; border-left: 3px solid var(--red-500); border-radius: 0 6px 6px 0; }
+.alert .icon { font-size: 22px; color: var(--red-500); margin-top: 1px; }
+.alert h3 { font-size: .9375rem; margin-bottom: 4px; }
+.alert p { font-size: .875rem; line-height: 1.6; color: var(--text); }
+.alert a { font-weight: 600; color: var(--red-600); white-space: nowrap; }
+
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-child { border-top: 1px solid var(--line); }
+.faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; font-size: 1rem; font-weight: 600; color: var(--navy-800); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .icon { font-size: 18px; stroke-width: 2; color: var(--muted); transition: transform .25s var(--ease); flex: none; }
+.faq details[open] summary .icon { transform: rotate(180deg); }
+.faq details p { padding: 0 32px 20px 0; font-size: .9375rem; line-height: 1.7; color: var(--muted); }
+
+.svc__aside { position: sticky; top: 100px; display: grid; gap: 20px; }
+.book-card { padding: 28px; border-radius: 8px; background: var(--navy-900); color: #fff; box-shadow: 0 30px 60px -36px rgba(7, 29, 56, .7); }
+.book-card__label { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #ff8a8e; margin-bottom: 10px; }
+.book-card__phone { display: block; font-size: 1.875rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.book-card__note { margin: 6px 0 20px; font-size: .8125rem; color: rgba(255, 255, 255, .62); }
+.book-card__btn { width: 100%; justify-content: center; height: 46px; font-size: .875rem; }
+.book-card__hours { margin: 22px 0 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+.book-card__hours div { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, .14); font-size: .875rem; }
+.book-card__hours dt { color: rgba(255, 255, 255, .7); }
+.book-card__hours dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.book-card__price { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 0 6px; font-size: .875rem; color: rgba(255, 255, 255, .7); }
+.book-card__price b { font-size: 1.125rem; color: #fff; font-variant-numeric: tabular-nums; }
+.book-card__link { display: inline-flex; align-items: center; gap: 6px; font-size: .8125rem; font-weight: 600; color: #fff; opacity: .85; }
+.book-card__link:hover { opacity: 1; }
+.book-card__link .icon { font-size: 14px; stroke-width: 2; }
+.toc { padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; }
+.toc p { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.toc a { display: block; padding: 8px 0 8px 14px; border-left: 2px solid var(--line); font-size: .875rem; color: var(--navy-800); transition: border-color .2s, color .2s; }
+.toc a:hover, .toc a.is-active { border-color: var(--red-500); color: var(--red-600); }
+
+.related { padding: clamp(56px, 6vw, 104px) 0; background: #f4f7fb; border-top: 1px solid var(--line); }
+.related__head { margin-bottom: 32px; }
+.related__head h2 { font-size: var(--fs-h2); }
+.related__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.rel-card { position: relative; display: block; height: 100%; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
+.rel-card:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -30px rgba(10, 36, 70, .5); }
+.rel-card__img { display: block; aspect-ratio: 5 / 3.4; overflow: hidden; }
+.rel-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.rel-card:hover .rel-card__img img { transform: scale(1.05); }
+.rel-card__body { display: block; padding: 18px 48px 20px 20px; }
+.rel-card__body b { display: block; font-size: 1rem; font-weight: 600; color: var(--navy-800); line-height: 1.3; margin-bottom: 4px; }
+.rel-card__body span { display: block; font-size: .8125rem; line-height: 1.5; color: var(--muted); }
+.rel-card > .icon { position: absolute; right: 18px; bottom: 22px; font-size: 16px; stroke-width: 2; color: var(--red-500); transition: transform .25s var(--ease); }
+.rel-card:hover > .icon { transform: translateX(3px); }
+
+.cta-band { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: var(--navy-900); }
+.cta-band__bg { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 70% 60%; }
+.cta-band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 29, 56, .92) 0%, rgba(7, 29, 56, .7) 60%, rgba(7, 29, 56, .45) 100%); }
+.cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: clamp(48px, 5vw, 80px) 0; }
+.cta-band h2 { color: #fff; font-size: var(--fs-h2); margin-bottom: 8px; }
+.cta-band p { font-size: var(--fs-lead); color: rgba(255, 255, 255, .8); }
+.cta-band .btn-cta--lg { height: 54px; padding: 0 28px; font-size: 1.0625rem; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 1100px) {
+  .svc__grid { grid-template-columns: 1fr; }
+  .svc__aside { position: static; order: -1; max-width: 560px; }
+  .toc { display: none; }
+  .related__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .page-hero__bg { bottom: auto; height: 400px; }
+  .page-hero__bg img { object-position: 78% 30%; }
+  .page-hero__bg::after { background: linear-gradient(180deg, rgba(9, 35, 74, .55) 0%, rgba(9, 35, 74, 0) 24%, rgba(9, 35, 74, 0) 55%, var(--navy-900) 100%); }
+  .page-hero__inner { padding-top: 330px; }
+  .crumbs { display: none; }
+  .page-hero__facts { display: none; }
+  .page-hero__actions { margin-bottom: 0; }
+  .checks { grid-template-columns: 1fr; }
+  .causes { grid-template-columns: 1fr 1fr; }
+  .cta-band__inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .causes { grid-template-columns: 1fr; }
+  .related__grid { grid-template-columns: 1fr; }
+  .page-hero__actions .btn-cta, .page-hero__actions .btn { width: 100%; justify-content: center; }
+  .svc-figure img { aspect-ratio: 4 / 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Tannlegevakt i Kristiansand","url":"https://tannlegevakt-kristiansand.no/akutt-tannverk/","telephone":"+4712345678","address":{"@type":"PostalAddress","streetAddress":"Festningsgata 39","postalCode":"4611","addressLocality":"Kristiansand","addressCountry":"NO"}}</script>
+</head>
+
+<body>
+<!-- SVG-ikoner (inline) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19.5 12h-15M10.5 6l-6 6 6 6"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01M16 17h.01" stroke-width="2.2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-alarm" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4.5 4.5 2.8 6.2M19.5 4.5l1.7 1.7"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5 13.5h6.5l-1 8 8.5-11h-6.5l1-8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19.5 5.8v5.7c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V5.8L12 3z"/><path d="m8.8 12 2.3 2.3 4.2-4.6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.7a7 7 0 0 1 14 0c0 5.6-7 11.7-7 11.7z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8.5-5-8.5-11.2A4.6 4.6 0 0 1 12 6.3a4.6 4.6 0 0 1 8.5 2.5C20.5 15 12 20 12 20z"/></symbol>
+    <symbol id="i-fast" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 13V9.2M12 13l2.8 1.8M9.5 2.5h5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.6-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8z"/></symbol>
+    <symbol id="i-play-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.6v6.8l5.4-3.4L10 8.6z" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.6 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3A21 21 0 0 0 14.4 4c-2.3 0-3.9 1.4-3.9 4v2.4H8v3h2.5V21h3.1z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M4.6 9.2h3.1V20H4.6zM6.15 4a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6zM10 9.2h3v1.5c.5-.9 1.6-1.8 3.3-1.8 3.3 0 3.9 2.2 3.9 5V20h-3.1v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H10z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5 21.5 20h-19L12 3.5z"/><path d="M12 10v4.5M12 17.4v.1" stroke-width="2"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="flag-no" viewBox="0 0 22 16"><rect width="22" height="16" fill="#BA0C2F"/><path d="M6 0h4v16H6zM0 6h22v4H0z" fill="#fff"/><path d="M7 0h2v16H7zM0 7h22v2H0z" fill="#00205B"/></symbol>
+    <clipPath id="gb-clip"><rect width="60" height="30"/></clipPath>
+    <clipPath id="gb-diag"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath>
+    <symbol id="flag-gb" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><g clip-path="url(#gb-clip)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gb-diag)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></symbol>
+    <path id="tooth" d="M7.6 3.3C5.2 3.3 3.6 5.2 3.6 7.7c0 2 .8 3.4 1.3 4.9.6 1.8.7 3.6 1.1 5.4.3 1.5.9 2.9 2 2.9 1.4 0 1.6-1.9 1.9-3.5.3-1.4.8-2.8 2.1-2.8s1.8 1.4 2.1 2.8c.3 1.6.5 3.5 1.9 3.5 1.1 0 1.7-1.4 2-2.9.4-1.8.5-3.6 1.1-5.4.5-1.5 1.3-2.9 1.3-4.9 0-2.5-1.6-4.4-4-4.4-1.8 0-2.7.9-4.4.9S9.4 3.3 7.6 3.3z"/>
+    <mask id="logo-cut"><rect width="48" height="48" fill="#fff"/><circle cx="36.5" cy="11" r="8.6" fill="#000"/></mask>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <g mask="url(#logo-cut)"><g transform="translate(1.5 1.5) scale(1.85)"><use href="#tooth" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round"/></g></g>
+      <path d="M36.5 5.2v11.6M30.7 11h11.6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Hopp til innhold</a>
+
+<!-- =====================================================================
+     HEADER
+     ===================================================================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Kristiansand Tannlegevakt – til forsiden">
+      <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="logo__text"><span class="logo__name">KRISTIANSAND</span><span class="logo__sub">TANNLEGEVAKT</span></span>
+    </a>
+    <!-- Sider fra kundens brief. Lenkene peker til WordPress-sidene (rene URL-er). -->
+    <nav class="main-nav" aria-label="Hovedmeny">
+      <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li class="has-sub">
+          <a href="index.html#behandlinger" aria-haspopup="true" aria-current="page">Behandlinger <svg class="icon sub-chev" aria-hidden="true"><use href="#i-chev-down"/></svg></a>
+          <div class="subnav">
+            <ul>
+              <li><a class="subnav__link" href="akutt-tannverk.html" aria-current="true">Akutt tannverk</a></li>
+              <li><a class="subnav__link" href="knekt-eller-skadet-tann.html">Knekt eller skadet tann</a></li>
+              <li><a class="subnav__link" href="tannbyll-infeksjon-og-betennelse.html">Tannbyll, infeksjon og betennelse</a></li>
+              <li><a class="subnav__link" href="akutt-tanntrekking.html">Akutt tanntrekking</a></li>
+              <li><a class="subnav__link" href="akutt-rotbehandling.html">Akutt rotbehandling</a></li>
+              <li><a class="subnav__link" href="akutte-problemer-med-visdomstann.html">Akutte problemer med visdomstann</a></li>
+              <li><a class="subnav__link" href="mistet-fylling-eller-krone.html">Mistet fylling eller krone</a></li>
+              <li><a class="subnav__link" href="tannskade-etter-ulykke.html">Tannskade etter ulykke</a></li>
+              <li><a class="subnav__link" href="akutt-tannbehandling.html">Akutt tannbehandling</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="index.html#priser">Priser</a></li>
+        <li><a href="index.html#timebestilling">Åpningstider</a></li>
+        <li><a href="index.html#om-oss">Om oss</a></li>
+        <li><a href="sporsmal-og-svar.html">Spørsmål og svar</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <!-- MIDLERTIDIG NUMMER: bytt +47 123 45 678 overalt når klienten bekrefter riktig nummer -->
+      <a class="phone-pill phone-pill--header" href="tel:+4712345678" aria-label="Ring +47 123 45 678">
+        <svg class="icon icon--fill" aria-hidden="true"><use href="#i-phone"/></svg><span>+47 123 45 678</span>
+      </a>
+      <a class="btn-cta" href="tel:+4712345678">Ring for å bestille time <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <div class="lang" data-lang>
+        <button class="lang__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Velg språk">
+          <svg class="lang__flag" aria-hidden="true"><use href="#flag-no"/></svg>
+          <span class="lang__code">NO</span>
+          <svg class="icon lang__chev" aria-hidden="true"><use href="#i-chev-down"/></svg>
+        </button>
+        <ul class="lang__menu" role="listbox" aria-label="Velg språk">
+          <li><button type="button" role="option" data-set-lang="nb" aria-selected="true"><svg class="lang__flag" aria-hidden="true"><use href="#flag-no"/></svg><span>Norsk</span><svg class="icon lang__check" aria-hidden="true"><use href="#i-check"/></svg></button></li>
+          <li><button type="button" role="option" data-set-lang="en" aria-selected="false"><svg class="lang__flag" aria-hidden="true"><use href="#flag-gb"/></svg><span>English</span><svg class="icon lang__check" aria-hidden="true"><use href="#i-check"/></svg></button></li>
+        </ul>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Åpne meny"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Meny">
+    <div class="mobile-nav__top">
+      <a class="logo" href="index.html">
+        <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="logo__text"><span class="logo__name">KRISTIANSAND</span><span class="logo__sub">TANNLEGEVAKT</span></span>
+      </a>
+      <button class="mobile-nav__close" type="button" aria-label="Lukk meny"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <nav aria-label="Mobilmeny">
+      <a href="index.html">Hjem</a>
+      <details class="mnav-sub">
+        <summary>Behandlinger <svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg></summary>
+        <div>
+          <a href="akutt-tannverk.html">Akutt tannverk</a>
+          <a href="knekt-eller-skadet-tann.html">Knekt eller skadet tann</a>
+          <a href="tannbyll-infeksjon-og-betennelse.html">Tannbyll, infeksjon og betennelse</a>
+          <a href="akutt-tanntrekking.html">Akutt tanntrekking</a>
+          <a href="akutt-rotbehandling.html">Akutt rotbehandling</a>
+          <a href="akutte-problemer-med-visdomstann.html">Akutte problemer med visdomstann</a>
+          <a href="mistet-fylling-eller-krone.html">Mistet fylling eller krone</a>
+          <a href="tannskade-etter-ulykke.html">Tannskade etter ulykke</a>
+          <a href="akutt-tannbehandling.html">Akutt tannbehandling</a>
+        </div>
+      </details>
+      <a href="index.html#priser">Priser</a>
+      <a href="index.html#timebestilling">Åpningstider</a>
+      <a href="index.html#om-oss">Om oss</a>
+      <a href="sporsmal-og-svar.html">Spørsmål og svar</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <div class="mobile-nav__actions">
+      <a class="phone-pill" href="tel:+4712345678"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-phone"/></svg>+47 123 45 678</a>
+      <a class="btn-cta" href="tel:+4712345678">Ring for å bestille time <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <p class="mobile-nav__note">Telefonen brukes kun til timebestilling.</p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- =====================================================================
+     SIDE-HERO
+     ===================================================================== -->
+<section class="page-hero" aria-labelledby="svc-title">
+  <div class="page-hero__bg" aria-hidden="true"><picture><source media="(max-width: 760px)" srcset="assets/img/tannverk-hero-sm.webp"><img src="assets/img/tannverk-hero.webp" alt="" width="1979" height="794" fetchpriority="high"></picture></div>
+  <div class="container page-hero__inner">
+    <nav class="crumbs" aria-label="Brødsmulesti">
+      <ol>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="index.html#behandlinger">Behandlinger</a></li>
+        <li><span aria-current="page">Akutt tannverk</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow" data-reveal>Akutt behandling</p>
+    <h1 id="svc-title" data-reveal>Akutt tannverk</h1>
+    <p class="page-hero__lead" data-reveal="2">Sterke tannsmerter som ikke går over, kan gjøre det vanskelig å spise, sove og fungere i hverdagen. Hos tannlegevakten i Kristiansand kan du bestille akutt time for undersøkelse og smertelindring – også på kveldstid etter avtale.</p>
+    <div class="page-hero__actions" data-reveal="2">
+      <a class="btn-cta btn-cta--lg" href="tel:+4712345678"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-phone"/></svg> Ring for å bestille time</a>
+      <a class="btn btn--ghost" href="index.html#priser">Se priser</a>
+    </div>
+    <ul class="page-hero__facts" data-reveal="3">
+      <li><b>Dagtid</b> 08:30 – 16.00</li>
+      <li><b>Kveld</b> 16.00 – 20.00 etter avtale</li>
+      <li><b>Helg</b> etter avtale</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================================================================
+     INNHOLD + BESTILLINGSKORT
+     ===================================================================== -->
+<div class="svc">
+  <div class="container svc__grid">
+    <article class="svc__body">
+
+      <section class="svc-block" id="hva-er" data-reveal>
+        <h2>Hva er akutt tannverk?</h2>
+        <p>Akutt tannverk er smerter i eller rundt en tann som kommer plutselig, er sterke eller ikke gir seg. Smerten kan være konstant og dunkende, eller komme som korte, skarpe stikk når du tygger eller drikker noe kaldt eller varmt.</p>
+        <p>Tannverk er et tegn på at noe er galt, og bør undersøkes av en tannlege så snart som mulig. Jo tidligere årsaken blir funnet, desto enklere er det ofte å behandle den.</p>
+      </section>
+
+      <section class="svc-block" id="symptomer" data-reveal>
+        <h2>Vanlige symptomer</h2>
+        <ul class="checks">
+          <li>Dunkende eller konstant smerte i en tann</li>
+          <li>Smerte som forverres når du tygger eller biter sammen</li>
+          <li>Ising eller smerte ved kaldt, varmt eller søtt</li>
+          <li>Smerte som stråler mot øret, kjeven eller hodet</li>
+          <li>Smerter som holder deg våken om natten</li>
+          <li>Hevelse, ømhet eller vond smak rundt tannen</li>
+        </ul>
+      </section>
+
+      <section class="svc-block" id="arsaker" data-reveal>
+        <h2>Vanlige årsaker</h2>
+        <div class="causes">
+          <div class="cause"><span class="cause__n">01</span><h3>Hull i tannen</h3><p>Bakterier bryter ned tannen og kan komme nær nerven.</p></div>
+          <div class="cause"><span class="cause__n">02</span><h3>Betent eller infisert nerve</h3><p>Nerven inne i tannen kan bli betent og gi sterke, dunkende smerter.</p></div>
+          <div class="cause"><span class="cause__n">03</span><h3>Sprekk eller brudd</h3><p>En sprukket tann kan gi skarpe smerter når du tygger.</p></div>
+          <div class="cause"><span class="cause__n">04</span><h3>Løs eller mistet fylling</h3><p>Tannen blir utsatt og kan bli følsom og vond.</p></div>
+          <div class="cause"><span class="cause__n">05</span><h3>Byll eller tannkjøttbetennelse</h3><p>Infeksjon rundt roten eller i tannkjøttet kan gi smerte og hevelse.</p></div>
+          <div class="cause"><span class="cause__n">06</span><h3>Visdomstann</h3><p>Visdomstenner kan gi trykk, smerte og betennelse bakerst i munnen.</p></div>
+        </div>
+      </section>
+
+      <figure class="svc-figure" data-reveal>
+        <img src="assets/img/tannverk-behandling.webp" alt="Illustrasjon: hender i hansker som viser en tannmodell i snitt" loading="lazy" width="1400" height="1050">
+        <figcaption>Illustrasjon. Behandlingen avgjøres alltid etter tannlegens undersøkelse.</figcaption>
+      </figure>
+
+      <section class="svc-block" id="behandling" data-reveal>
+        <h2>Undersøkelse og behandling</h2>
+        <ol class="steps">
+          <li><span class="steps__n">1</span><div><h3>Ring og bestill time</h3><p>Alle besøk avtales på forhånd per telefon. Telefonen brukes kun til timebestilling.</p></div></li>
+          <li><span class="steps__n">2</span><div><h3>Undersøkelse</h3><p>Tannlegen undersøker tannen og området rundt, og tar røntgenbilder ved behov for å finne årsaken til smerten.</p></div></li>
+          <li><span class="steps__n">3</span><div><h3>Behandling</h3><p>Du får forklart hvilke muligheter som finnes. Målet er å lindre smerten og behandle årsaken.</p></div></li>
+        </ol>
+        <h3 class="svc-sub">Mulig behandling kan være</h3>
+        <ul class="chips">
+          <li>Midlertidig eller permanent fylling</li>
+          <li>Rotbehandling</li>
+          <li>Behandling av infeksjon</li>
+          <li>Tanntrekking</li>
+        </ul>
+        <p class="svc-muted">Hvilken behandling som er aktuell, avhenger alltid av tannlegens undersøkelse og kliniske funn.</p>
+      </section>
+
+      <section class="svc-block" id="for-timen" data-reveal>
+        <h2>Før timen din</h2>
+        <ul class="tips">
+          <li>Skyll munnen forsiktig med lunkent vann.</li>
+          <li>Unngå svært varm, kald eller søt mat og drikke.</li>
+          <li>Tygg på motsatt side av den vonde tannen.</li>
+          <li>Reseptfrie smertestillende kan brukes etter pakningsvedlegget. Spør på apoteket om du er usikker.</li>
+          <li>Ha med en oversikt over medisiner du bruker.</li>
+        </ul>
+        <div class="alert" role="note">
+          <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+          <div>
+            <h3>Når bør du kontakte legevakt?</h3>
+            <p>Ved kraftig hevelse i ansiktet eller halsen, problemer med å svelge eller puste, eller høy feber: kontakt legevakten på <a href="tel:116117">116 117</a>. Ring <a href="tel:113">113</a> ved akutt fare.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="svc-block" id="sporsmal" data-reveal>
+        <h2>Spørsmål og svar</h2>
+        <div class="faq">
+          <details>
+            <summary>Hvordan bestiller jeg akutt time?<svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg></summary>
+            <p>Ring oss på +47 123 45 678. Alle besøk avtales på forhånd per telefon, både på dagtid, kveldstid og i helgen.</p>
+          </details>
+          <details>
+            <summary>Kan jeg få råd om tannverk på telefonen?<svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg></summary>
+            <p>Nei. Telefonen brukes kun til timebestilling, ikke til konsultasjoner eller tannlegefaglige råd.</p>
+          </details>
+          <details>
+            <summary>Hva koster behandling av akutt tannverk?<svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg></summary>
+            <p>Prisen avhenger av undersøkelsen og hvilken behandling som er nødvendig. Se prislisten for veiledende priser.</p>
+          </details>
+          <details>
+            <summary>Tar dere imot besøkende og turister?<svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg></summary>
+            <p>Ja. Vi hjelper både lokalbefolkning og besøkende i Kristiansand.</p>
+          </details>
+        </div>
+      </section>
+    </article>
+
+    <!-- Bestillingskort som følger med ved scroll -->
+    <aside class="svc__aside" aria-label="Bestill time">
+      <div class="book-card">
+        <p class="book-card__label">Bestill akutt time</p>
+        <a class="book-card__phone" href="tel:+4712345678">+47 123 45 678</a>
+        <p class="book-card__note">Telefonen brukes kun til timebestilling.</p>
+        <a class="btn-cta book-card__btn" href="tel:+4712345678"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-phone"/></svg> Ring for å bestille time</a>
+        <dl class="book-card__hours">
+          <div><dt>Mandag – Fredag:</dt><dd>08:30 – 16.00</dd></div>
+          <div><dt>Etter kl.</dt><dd>16.00 – 20.00</dd></div>
+          <div><dt>Helgetimer</dt><dd>Etter avtale.</dd></div>
+        </dl>
+        <div class="book-card__price">
+          <span>Akutt tannverk</span>
+          <b>fra 1 200 kr</b>
+        </div>
+        <a class="book-card__link" href="index.html#priser">Se prisliste <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <nav class="toc" aria-label="På denne siden">
+        <p>På denne siden</p>
+        <a href="#hva-er">Hva er akutt tannverk?</a>
+        <a href="#symptomer">Vanlige symptomer</a>
+        <a href="#arsaker">Vanlige årsaker</a>
+        <a href="#behandling">Undersøkelse og behandling</a>
+        <a href="#for-timen">Før timen din</a>
+        <a href="#sporsmal">Spørsmål og svar</a>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<!-- =====================================================================
+     RELATERTE BEHANDLINGER
+     ===================================================================== -->
+<section class="related" aria-labelledby="rel-title">
+  <div class="container">
+    <div class="related__head" data-reveal>
+      <p class="eyebrow">Behandlinger</p>
+      <h2 id="rel-title">Andre akutte behandlinger</h2>
+    </div>
+    <ul class="related__grid" data-reveal="2">
+      <li><a class="rel-card" href="akutt-rotbehandling.html"><span class="rel-card__img"><img src="assets/img/kort-5.webp" alt="" loading="lazy" width="960" height="768"></span><span class="rel-card__body"><b>Akutt rotbehandling</b><span>Når tannens nerve er betent eller infisert.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+      <li><a class="rel-card" href="tannbyll-infeksjon-og-betennelse.html"><span class="rel-card__img"><img src="assets/img/kort-3.webp" alt="" loading="lazy" width="960" height="768"></span><span class="rel-card__body"><b>Tannbyll, infeksjon og betennelse</b><span>Hevelse, infeksjon og smerter i tannkjøtt.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+      <li><a class="rel-card" href="knekt-eller-skadet-tann.html"><span class="rel-card__img"><img src="assets/img/kort-2.webp" alt="" loading="lazy" width="960" height="768"></span><span class="rel-card__body"><b>Knekt eller skadet tann</b><span>En tann som har brukket eller er skadet etter uhell.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+      <li><a class="rel-card" href="mistet-fylling-eller-krone.html"><span class="rel-card__img"><img src="assets/img/kort-7.webp" alt="" loading="lazy" width="960" height="768"></span><span class="rel-card__body"><b>Mistet fylling eller krone</b><span>Når en fylling eller krone har løsnet.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================================================================
+     RING-STRIPE
+     ===================================================================== -->
+<section class="cta-band" aria-labelledby="cta-title">
+  <img class="cta-band__bg" src="assets/img/kristiansand.webp" alt="" loading="lazy" width="1672" height="941">
+  <div class="container cta-band__inner">
+    <div>
+      <h2 id="cta-title">Har du sterke tannsmerter?</h2>
+      <p>Ring for å bestille time hos tannlegevakten i Kristiansand.</p>
+    </div>
+    <a class="btn-cta btn-cta--lg" href="tel:+4712345678"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-phone"/></svg> +47 123 45 678</a>
+  </div>
+</section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer class="site-footer">
+  <img class="site-footer__bg" src="assets/img/bolger.webp" alt="" loading="lazy" width="1983" height="793">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="index.html" aria-label="Kristiansand Tannlegevakt – til toppen">
+        <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="logo__text"><span class="logo__name">KRISTIANSAND</span><span class="logo__sub">TANNLEGEVAKT</span></span>
+      </a>
+      <p>Akutt tannlegehjelp for lokalbefolkning og besøkende i Kristiansand. Rask, trygg og profesjonell behandling når du trenger det.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-fb"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-in"/></svg></a>
+      </div>
+    </div>
+    <nav class="footer-col" aria-labelledby="f-links">
+      <h3 id="f-links">Hurtiglenker</h3>
+      <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="index.html#behandlinger">Behandlinger</a></li>
+        <li><a href="index.html#priser">Priser</a></li>
+        <li><a href="index.html#timebestilling">Åpningstider</a></li>
+        <li><a href="index.html#om-oss">Om oss</a></li>
+        <li><a href="sporsmal-og-svar.html">Spørsmål og svar</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-labelledby="f-treat">
+      <h3 id="f-treat">Våre behandlinger</h3>
+      <ul>
+        <li><a href="akutt-tannverk.html">Akutt tannverk</a></li>
+        <li><a href="knekt-eller-skadet-tann.html">Knekt eller skadet tann</a></li>
+        <li><a href="tannbyll-infeksjon-og-betennelse.html">Tannbyll, infeksjon og betennelse</a></li>
+        <li><a href="akutt-tanntrekking.html">Akutt tanntrekking</a></li>
+        <li><a href="akutt-rotbehandling.html">Akutt rotbehandling</a></li>
+        <li><a href="akutte-problemer-med-visdomstann.html">Akutte problemer med visdomstann</a></li>
+        <li><a href="mistet-fylling-eller-krone.html">Mistet fylling eller krone</a></li>
+        <li><a href="tannskade-etter-ulykke.html">Tannskade etter ulykke</a></li>
+        <li><a href="akutt-tannbehandling.html">Akutt tannbehandling</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h3>Kontakt</h3>
+      <ul class="contact-list">
+        <li><svg class="icon icon--fill" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+4712345678">+47 123 45 678</a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:post@kristiansand-tannlegevakt.no">post@kristiansand-tannlegevakt.no</a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><address>Festningsgata 39<br>4611 Kristiansand</address></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <div class="footer-bottom__row">
+      <small>© <span data-year>2026</span> Kristiansand Tannlegevakt. Alle rettigheter reservert.</small>
+      <ul class="legal">
+        <li><a href="personvern.html">Personvern</a></li>
+        <li><a href="vilkar.html">Vilkår</a></li>
+        <li><a href="cookies.html">Cookie policy</a></li>
+      </ul>
+    </div>
+    <p class="disclaimer">Bildene på denne nettsiden er illustrasjoner, ikke dokumentasjon av faktiske pasienter, behandlingsresultater eller klinikkens lokaler.</p>
+  </div>
+</footer>
+
+<script>
+/* Oversettelser: norsk (standard) → engelsk. Legg til nye linjer her ved behov. */
+const I18N_EN = {
+ "Kristiansand Tannlegevakt – Akutt tannlegehjelp i Kristiansand": "Kristiansand Tannlegevakt – Emergency dental care in Kristiansand",
+ "Rask hjelp ved akutte tannproblemer, tannskader, hevelse, betennelse og infeksjoner – også utenfor ordinær åpningstid. Bestill time på telefon.": "Fast help with acute dental problems, dental injuries, swelling, inflammation and infections – also outside regular opening hours. Book by phone.",
+ "Hopp til innhold": "Skip to content",
+ "Hjem": "Home",
+ "Behandlinger": "Treatments",
+ "Priser": "Prices",
+ "Om oss": "About us",
+ "Kontakt": "Contact",
+ "Ring for å bestille time": "Call to book an appointment",
+ "Telefonen brukes kun til timebestilling.": "The phone line is for booking appointments only.",
+ "Akutt tannlegehjelp i Kristiansand": "Emergency dental care in Kristiansand",
+ "Rask hjelp": "Fast help",
+ "når du har vondt": "when you're in pain",
+ "Vi tilbyr profesjonell hjelp ved akutte tannproblemer, tannskader, hevelse, betennelse og infeksjoner – også utenfor ordinær åpningstid.": "We provide professional help with acute dental problems, dental injuries, swelling, inflammation and infections – also outside regular opening hours.",
+ "Se våre behandlinger": "See our treatments",
+ "Se åpningstider": "See opening hours",
+ "når du trenger det": "when you need it",
+ "Trygg og skånsom": "Safe and gentle",
+ "behandling": "treatment",
+ "Sentralt i": "Centrally located in",
+ "Akutt hjelp": "Urgent help",
+ "for hele familien": "for the whole family",
+ "Våre behandlinger": "Our treatments",
+ "Hva kan vi hjelpe deg med?": "How can we help you?",
+ "Vi tilbyr akutt tannbehandling for både lokalbefolkning og besøkende i Kristiansand. Ring for å bestille time, både i ordinær åpningstid og etter kl. 16.00.": "We offer emergency dental treatment for both locals and visitors in Kristiansand. Call to book an appointment, during regular opening hours and after 16:00.",
+ "Akutt tannverk": "Acute toothache",
+ "Sterke tannsmerter som ikke går over.": "Severe tooth pain that won't go away.",
+ "Les mer": "Read more",
+ "om": "about",
+ "Knekt eller skadet tann": "Broken or damaged tooth",
+ "En tann som har brukket eller er skadet etter uhell.": "A tooth that has broken or been damaged in an accident.",
+ "Tannbyll og betennelse": "Dental abscess and inflammation",
+ "Hevelse, infeksjon og smerter i tannkjøtt.": "Swelling, infection and pain in the gums.",
+ "Akutt tanntrekking": "Emergency tooth extraction",
+ "Når en tann ikke kan bevares.": "When a tooth cannot be saved.",
+ "Rotbehandling": "Root canal treatment",
+ "Når tannens nerve er betent eller infisert.": "When the tooth's nerve is inflamed or infected.",
+ "Visdomstann": "Wisdom tooth",
+ "Smerter og hevelse rundt visdomstennene.": "Pain and swelling around the wisdom teeth.",
+ "Mistet fylling eller krone": "Lost filling or crown",
+ "Når en fylling eller krone har løsnet.": "When a filling or crown has come loose.",
+ "Tannskade etter ulykke": "Dental injury after an accident",
+ "Hjelp etter slag eller fall mot tennene.": "Help after a blow or fall to the teeth.",
+ "Om": "About",
+ "oss": "us",
+ "En moderne tannlegevakt": "A modern emergency dental clinic",
+ "med fokus på": "focused on",
+ "akutt hjelp": "urgent care",
+ "Vi er en privat tannlegevakt i Kristiansand som tilbyr rask og profesjonell hjelp for akutte tannproblemer. Vårt mål er å hjelpe deg ut av smerte, gjenopprette din orale helse og gi deg en trygg og behagelig opplevelse.": "We are a private emergency dental clinic in Kristiansand offering fast and professional help with acute dental problems. Our goal is to relieve your pain, restore your oral health and give you a safe and comfortable experience.",
+ "Les mer om oss": "More about us",
+ "Moderne løsninger for en tryggere og mer behagelig behandling": "Modern solutions for safer and more comfortable treatment",
+ "Rask timebestilling": "Quick appointments",
+ "når du har det vondt": "when it hurts",
+ "Moderne utstyr": "Modern equipment",
+ "og skånsom behandling": "and gentle treatment",
+ "Fokus på pasienten": "Patient-focused care",
+ "og god oppfølging": "with good follow-up",
+ "Sentralt i Kristiansand": "Centrally located in Kristiansand",
+ "enkelt å komme til": "easy to get to",
+ "Se hvordan vi hjelper": "See how we help",
+ "Akutt tannbehandling": "Emergency dental treatment",
+ "Se denne korte videoen for å få et innblikk i hvordan en akutt time foregår og hva du kan forvente.": "Watch this short video to see how an emergency appointment works and what you can expect.",
+ "Se video": "Watch video",
+ "Timebestilling": "Appointments",
+ "Bestill time på telefon.": "Book by phone.",
+ "Enkelt og raskt.": "Quick and easy.",
+ "Tannlege på tilkalling. Akutte timer på kveldstid bestilles kun på telefon. Helgetimer avtales også på forhånd.": "Dentist on call. Emergency evening appointments are booked by phone only. Weekend appointments are also arranged in advance.",
+ "Åpningstider": "Opening hours",
+ "Mandag – Fredag:": "Monday – Friday:",
+ "Etter kl.": "After",
+ "Bestill time kun på telefon.": "Appointments by phone only.",
+ "Helgetimer": "Weekend appointments",
+ "Etter avtale.": "By arrangement.",
+ "Ikke konsultasjoner eller tannlegefaglige råd.": "Not for consultations or professional dental advice.",
+ "Åpne veibeskrivelse i Google Maps": "Get directions in Google Maps",
+ "Hvor finner du oss": "Where to find us",
+ "Vår klinikk ligger sentralt og er enkel": "Our clinic is centrally located and easy",
+ "å komme til både for lokale og besøkende.": "to reach for both locals and visitors.",
+ "Se på kart": "View on map",
+ "Akutt tannlegehjelp for lokalbefolkning og besøkende i Kristiansand. Rask, trygg og profesjonell behandling når du trenger det.": "Emergency dental care for locals and visitors in Kristiansand. Fast, safe and professional treatment when you need it.",
+ "Hurtiglenker": "Quick links",
+ "Kristiansand Tannlegevakt. Alle rettigheter reservert.": "Kristiansand Tannlegevakt. All rights reserved.",
+ "Personvern": "Privacy",
+ "Vilkår": "Terms",
+ "Bildene på denne nettsiden er illustrasjoner, ikke dokumentasjon av faktiske pasienter, behandlingsresultater eller klinikkens lokaler.": "The images on this website are illustrations, not documentation of actual patients, treatment results or the clinic's premises.",
+ "Kristiansand Tannlegevakt – til forsiden": "Kristiansand Tannlegevakt – home",
+ "Hovedmeny": "Main menu",
+ "Ring +47 123 45 678": "Call +47 123 45 678",
+ "Åpne meny": "Open menu",
+ "Meny": "Menu",
+ "Lukk meny": "Close menu",
+ "Mobilmeny": "Mobile menu",
+ "Velg språk": "Choose language",
+ "Illustrasjon: tannmodell og tanninstrumenter i et moderne behandlingsrom": "Illustration: tooth model and dental instruments in a modern treatment room",
+ "Behandlinger – bruk piltastene for å bla": "Treatments – use the arrow keys to browse",
+ "Forrige behandling": "Previous treatment",
+ "Neste behandling": "Next treatment",
+ "Illustrasjon: tannmodell av en jeksel": "Illustration: model of a molar",
+ "Illustrasjon: tann med sprekker": "Illustration: cracked tooth",
+ "Illustrasjon: betent tannkjøtt rundt jeksler": "Illustration: inflamed gums around molars",
+ "Illustrasjon: tang som trekker en tann": "Illustration: forceps extracting a tooth",
+ "Illustrasjon: rotkanalbehandling i snitt": "Illustration: cross-section of a root canal treatment",
+ "Illustrasjon: visdomstann som bryter frem": "Illustration: erupting wisdom tooth",
+ "Illustrasjon: jeksel der fyllingen har løsnet": "Illustration: molar with a lost filling",
+ "Illustrasjon: skadet fortann": "Illustration: damaged front tooth",
+ "Illustrasjon: tannmodell i snitt og tanninstrumenter på en benk": "Illustration: cross-section tooth model and dental instruments on a counter",
+ "Illustrasjon: behandlingsstol og akuttskilt i et behandlingsrom": "Illustration: dental chair and emergency sign in a treatment room",
+ "Forrige video": "Previous video",
+ "Neste video": "Next video",
+ "Videoer – dra for å bla": "Videos – drag to browse",
+ "Lukk video": "Close video",
+ "Illustrasjon: behandlingsstol i et moderne behandlingsrom": "Illustration: dental chair in a modern treatment room",
+ "Kart: Festningsgata 39, 4611 Kristiansand": "Map: Festningsgata 39, 4611 Kristiansand",
+ "Kristiansand Tannlegevakt – til toppen": "Kristiansand Tannlegevakt – back to top",
+ "Videoen legges inn snart.": "The video will be added soon.",
+ "karusell": "carousel",
+ "Tannbyll, infeksjon og betennelse": "Dental abscess, infection and inflammation",
+ "Akutt rotbehandling": "Emergency root canal treatment",
+ "Akutte problemer med visdomstann": "Acute wisdom tooth problems",
+ "Spørsmål og svar": "FAQ",
+ "Illustrasjon: hender i hansker som viser en tannmodell i snitt": "Illustration: gloved hands showing a cross-section tooth model",
+ "Illustrasjon: inngang til en tannlegevakt med opplyst akuttskilt": "Illustration: entrance to an emergency dental clinic with an illuminated sign",
+ "Generell akutt undersøkelse og behandling.": "General emergency assessment and treatment.",
+ "Illustrasjon: tannundersøkelse med tanninstrumenter": "Illustration: dental examination with dental instruments",
+ "Priser og vilkår": "Prices and terms",
+ "Endelig pris avhenger av tannlegens undersøkelse og hvilken behandling som er nødvendig.": "The final price depends on the dentist's examination and the treatment required.",
+ "Kveldstillegg etter kl. 16.00": "Evening surcharge after 16:00",
+ "Helgetillegg": "Weekend surcharge",
+ "Avbestilling": "Cancellation",
+ "Timer som ikke avbestilles senest 24 timer før avtalt tid, faktureres med 600 kr.": "Appointments not cancelled at least 24 hours in advance are charged NOK 600.",
+ "Undersøkelse": "Examination",
+ "Behandling": "Treatment",
+ "Akutt undersøkelse og vurdering": "Emergency examination and assessment",
+ "Røntgenbilde, per bilde": "X-ray, per image",
+ "Smertelindrende behandling": "Pain-relieving treatment",
+ "Kirurgisk fjerning av visdomstann": "Surgical wisdom tooth removal",
+ "Akutt rotbehandling, første behandling": "Emergency root canal, first visit",
+ "Midlertidig fylling": "Temporary filling",
+ "Resementering av løs krone": "Re-cementing a loose crown",
+ "Behandling av tannskade etter ulykke": "Treatment of dental injury after an accident",
+ "950 kr": "NOK 950",
+ "150 kr": "NOK 150",
+ "500 kr": "NOK 500",
+ "900 kr": "NOK 900",
+ "fra 1 200 kr": "from NOK 1 200",
+ "fra 1 500 kr": "from NOK 1 500",
+ "fra 3 500 kr": "from NOK 3 500",
+ "fra 2 200 kr": "from NOK 2 200",
+ "fra 900 kr": "from NOK 900",
+ "fra 800 kr": "from NOK 800",
+ "Akutte behandlinger": "Emergency treatments",
+ "fra 1 400 kr": "from NOK 1 400",
+ "fra 1 300 kr": "from NOK 1 300",
+ "fra 1 800 kr": "from NOK 1 800",
+ "Akutt tannverk i Kristiansand | Tannlegevakt Kristiansand": "Acute toothache in Kristiansand | Emergency dentist Kristiansand",
+ "Sterk tannpine som ikke går over? Tannlegevakt i Kristiansand for akutt tannverk. Dagtid 08:30–16.00 og kveld 16.00–20.00 etter avtale. Ring for å bestille time.": "Severe toothache that won't go away? Emergency dentist in Kristiansand for acute toothache. Daytime 08:30–16:00 and evenings 16:00–20:00 by arrangement. Call to book.",
+ "Brødsmulesti": "Breadcrumb",
+ "Akutt behandling": "Emergency care",
+ "Sterke tannsmerter som ikke går over, kan gjøre det vanskelig å spise, sove og fungere i hverdagen. Hos tannlegevakten i Kristiansand kan du bestille akutt time for undersøkelse og smertelindring – også på kveldstid etter avtale.": "Severe tooth pain that won't go away can make it hard to eat, sleep and get through the day. At the emergency dental clinic in Kristiansand you can book an urgent appointment for examination and pain relief – also in the evening by arrangement.",
+ "Se priser": "See prices",
+ "Dagtid": "Daytime",
+ "Kveld": "Evening",
+ "16.00 – 20.00 etter avtale": "16:00 – 20:00 by arrangement",
+ "Helg": "Weekend",
+ "etter avtale": "by arrangement",
+ "Hva er akutt tannverk?": "What is acute toothache?",
+ "Akutt tannverk er smerter i eller rundt en tann som kommer plutselig, er sterke eller ikke gir seg. Smerten kan være konstant og dunkende, eller komme som korte, skarpe stikk når du tygger eller drikker noe kaldt eller varmt.": "Acute toothache is pain in or around a tooth that comes on suddenly, is severe or does not go away. The pain can be constant and throbbing, or come as short, sharp twinges when you chew or drink something cold or hot.",
+ "Tannverk er et tegn på at noe er galt, og bør undersøkes av en tannlege så snart som mulig. Jo tidligere årsaken blir funnet, desto enklere er det ofte å behandle den.": "Toothache is a sign that something is wrong and should be examined by a dentist as soon as possible. The earlier the cause is found, the easier it often is to treat.",
+ "Vanlige symptomer": "Common symptoms",
+ "Dunkende eller konstant smerte i en tann": "Throbbing or constant pain in a tooth",
+ "Smerte som forverres når du tygger eller biter sammen": "Pain that gets worse when you chew or bite down",
+ "Ising eller smerte ved kaldt, varmt eller søtt": "Sensitivity or pain with cold, hot or sweet",
+ "Smerte som stråler mot øret, kjeven eller hodet": "Pain that spreads to the ear, jaw or head",
+ "Smerter som holder deg våken om natten": "Pain that keeps you awake at night",
+ "Hevelse, ømhet eller vond smak rundt tannen": "Swelling, tenderness or a bad taste around the tooth",
+ "Vanlige årsaker": "Common causes",
+ "Hull i tannen": "Tooth decay",
+ "Bakterier bryter ned tannen og kan komme nær nerven.": "Bacteria break down the tooth and can reach close to the nerve.",
+ "Betent eller infisert nerve": "Inflamed or infected nerve",
+ "Nerven inne i tannen kan bli betent og gi sterke, dunkende smerter.": "The nerve inside the tooth can become inflamed and cause severe, throbbing pain.",
+ "Sprekk eller brudd": "Crack or fracture",
+ "En sprukket tann kan gi skarpe smerter når du tygger.": "A cracked tooth can cause sharp pain when you chew.",
+ "Løs eller mistet fylling": "Loose or lost filling",
+ "Tannen blir utsatt og kan bli følsom og vond.": "The tooth is exposed and can become sensitive and painful.",
+ "Byll eller tannkjøttbetennelse": "Abscess or gum inflammation",
+ "Infeksjon rundt roten eller i tannkjøttet kan gi smerte og hevelse.": "Infection around the root or in the gums can cause pain and swelling.",
+ "Visdomstenner kan gi trykk, smerte og betennelse bakerst i munnen.": "Wisdom teeth can cause pressure, pain and inflammation at the back of the mouth.",
+ "Illustrasjon. Behandlingen avgjøres alltid etter tannlegens undersøkelse.": "Illustration. Treatment is always decided after the dentist's examination.",
+ "Undersøkelse og behandling": "Examination and treatment",
+ "Ring og bestill time": "Call and book",
+ "Alle besøk avtales på forhånd per telefon. Telefonen brukes kun til timebestilling.": "All visits are arranged in advance by phone. The phone line is for booking only.",
+ "Tannlegen undersøker tannen og området rundt, og tar røntgenbilder ved behov for å finne årsaken til smerten.": "The dentist examines the tooth and the surrounding area, and takes X-rays if needed to find the cause of the pain.",
+ "Du får forklart hvilke muligheter som finnes. Målet er å lindre smerten og behandle årsaken.": "You will be told which options are available. The aim is to relieve the pain and treat the cause.",
+ "Mulig behandling kan være": "Possible treatment may include",
+ "Midlertidig eller permanent fylling": "Temporary or permanent filling",
+ "Behandling av infeksjon": "Treatment of infection",
+ "Tanntrekking": "Tooth extraction",
+ "Hvilken behandling som er aktuell, avhenger alltid av tannlegens undersøkelse og kliniske funn.": "Which treatment is appropriate always depends on the dentist's examination and clinical findings.",
+ "Før timen din": "Before your appointment",
+ "Skyll munnen forsiktig med lunkent vann.": "Rinse your mouth gently with lukewarm water.",
+ "Unngå svært varm, kald eller søt mat og drikke.": "Avoid very hot, cold or sweet food and drinks.",
+ "Tygg på motsatt side av den vonde tannen.": "Chew on the opposite side from the painful tooth.",
+ "Reseptfrie smertestillende kan brukes etter pakningsvedlegget. Spør på apoteket om du er usikker.": "Over-the-counter painkillers can be used as described in the package leaflet. Ask at the pharmacy if you are unsure.",
+ "Ha med en oversikt over medisiner du bruker.": "Bring a list of any medicines you take.",
+ "Når bør du kontakte legevakt?": "When should you contact the out-of-hours medical service?",
+ "Ved kraftig hevelse i ansiktet eller halsen, problemer med å svelge eller puste, eller høy feber: kontakt legevakten på": "If you have severe swelling of the face or throat, difficulty swallowing or breathing, or a high fever: contact the out-of-hours medical service (legevakt) on",
+ ". Ring": ". Call",
+ "ved akutt fare.": "in an emergency.",
+ "Hvordan bestiller jeg akutt time?": "How do I book an emergency appointment?",
+ "Ring oss på +47 123 45 678. Alle besøk avtales på forhånd per telefon, både på dagtid, kveldstid og i helgen.": "Call us on +47 123 45 678. All visits are arranged in advance by phone – daytime, evenings and weekends.",
+ "Kan jeg få råd om tannverk på telefonen?": "Can I get advice about toothache over the phone?",
+ "Nei. Telefonen brukes kun til timebestilling, ikke til konsultasjoner eller tannlegefaglige råd.": "No. The phone line is for booking only, not for consultations or professional dental advice.",
+ "Hva koster behandling av akutt tannverk?": "How much does treatment for acute toothache cost?",
+ "Prisen avhenger av undersøkelsen og hvilken behandling som er nødvendig. Se prislisten for veiledende priser.": "The price depends on the examination and the treatment required. See the price list for guide prices.",
+ "Tar dere imot besøkende og turister?": "Do you see visitors and tourists?",
+ "Ja. Vi hjelper både lokalbefolkning og besøkende i Kristiansand.": "Yes. We help both locals and visitors in Kristiansand.",
+ "Bestill time": "Book an appointment",
+ "Bestill akutt time": "Book an emergency appointment",
+ "Se prisliste": "See price list",
+ "På denne siden": "On this page",
+ "Andre akutte behandlinger": "Other emergency treatments",
+ "Har du sterke tannsmerter?": "Are you in severe tooth pain?",
+ "Ring for å bestille time hos tannlegevakten i Kristiansand.": "Call to book an appointment at the emergency dental clinic in Kristiansand.",
+ "Siden kommer snart | Kristiansand Tannlegevakt": "Page coming soon | Kristiansand Tannlegevakt",
+ "Under arbeid": "In progress",
+ "Denne siden kommer snart": "This page is coming soon",
+ "Siden er ikke publisert ennå. I mellomtiden kan du gå tilbake til forsiden eller ringe for å bestille time.": "This page has not been published yet. In the meantime you can go back to the home page or call to book an appointment.",
+ "Til forsiden": "Back to home"
+};
+</script>
+<script>
+/* =========================================================================
+   Kristiansand Tannlegevakt – avhengighetsfrie skript
+   ========================================================================= */
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ---------- Språk: norsk først, engelsk som alternativ ---------- */
+  const EN = window.I18N_EN || (typeof I18N_EN !== 'undefined' ? I18N_EN : {});
+  const NB = Object.fromEntries(Object.entries(EN).map(([k, v]) => [v, k]));
+  let lang = 'nb';
+  const T = (str) => (lang === 'en' ? (EN[str] || str) : str);
+  window.T = T;
+  const swap = (val) => {
+    const key = val.trim().replace(/\s+/g, ' ');
+    if (!key) return val;
+    const out = lang === 'en' ? (EN[key] || (NB[key] ? key : null)) : (NB[key] || (EN[key] ? key : null));
+    if (!out || out === key) return val;
+    const lead = val.match(/^\s*/)[0], trail = val.match(/\s*$/)[0];
+    return lead + out + trail;
+  };
+  const translatePage = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement && !n.parentElement.closest('script, style') && n.nodeValue.trim() ? 1 : 2)
+    });
+    let n;
+    while ((n = walker.nextNode())) { const v = swap(n.nodeValue); if (v !== n.nodeValue) n.nodeValue = v; }
+    document.querySelectorAll('[aria-label], [alt], [title], [aria-roledescription]').forEach((el) => {
+      ['aria-label', 'alt', 'title', 'aria-roledescription'].forEach((a) => {
+        const v = el.getAttribute(a);
+        if (v) { const t = swap(v); if (t !== v) el.setAttribute(a, t); }
+      });
+    });
+    document.title = swap(document.title);
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', swap(md.getAttribute('content')));
+    document.documentElement.lang = lang === 'en' ? 'en' : 'nb';
+  };
+  const langBox = document.querySelector('[data-lang]');
+  const langBtn = langBox.querySelector('.lang__btn');
+  const setLangMenu = (open) => { langBox.classList.toggle('is-open', open); langBtn.setAttribute('aria-expanded', String(open)); };
+  const applyLang = (l, save = true) => {
+    lang = l === 'en' ? 'en' : 'nb';
+    langBox.querySelector('.lang__flag use').setAttribute('href', lang === 'en' ? '#flag-gb' : '#flag-no');
+    langBox.querySelector('.lang__code').textContent = lang === 'en' ? 'EN' : 'NO';
+    langBox.querySelectorAll('[data-set-lang]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.setLang === lang)));
+    translatePage();
+    document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
+    if (save) { try { localStorage.setItem('ktv-lang', lang); } catch (_) {} }
+  };
+  langBtn.addEventListener('click', (e) => { e.stopPropagation(); setLangMenu(!langBox.classList.contains('is-open')); });
+  langBox.querySelectorAll('[data-set-lang]').forEach((b) => b.addEventListener('click', () => { applyLang(b.dataset.setLang); setLangMenu(false); langBtn.focus(); }));
+  document.addEventListener('click', (e) => { if (!langBox.contains(e.target)) setLangMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && langBox.classList.contains('is-open')) { setLangMenu(false); langBtn.focus(); } });
+
+  /* ---------- Header ---------- */
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Mobilmeny ---------- */
+  const toggle = document.querySelector('.menu-toggle');
+  const drawer = document.getElementById('mobile-nav');
+  const closeBtn = drawer.querySelector('.mobile-nav__close');
+  const setMenu = (open) => {
+    drawer.classList.toggle('is-open', open);
+    drawer.setAttribute('aria-hidden', String(!open));
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    (open ? closeBtn : toggle).focus();
+  };
+  toggle.addEventListener('click', () => setMenu(true));
+  closeBtn.addEventListener('click', () => setMenu(false));
+  drawer.addEventListener('click', (e) => { if (e.target === drawer || e.target.closest('nav a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setMenu(false); });
+
+  /* ---------- Inntoning ved scroll ---------- */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduceMotion.matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-in'));
+  }
+
+  /* =======================================================================
+     Konkav karusell – hvert kort deles i vertikale striper på innsiden
+     av en sylinder, så kortet bøyer seg og veggen buer seg rundt deg.
+     ======================================================================= */
+  const cc = document.querySelector('[data-concave]');
+  if (cc) {
+    const stage = cc.querySelector('.cc-stage');
+    const items = [...cc.querySelectorAll('.cc-source > li')];
+    const caption = cc.querySelector('.cc-caption');
+    const elTitle = cc.querySelector('.cc-title');
+    const elText = cc.querySelector('.cc-text');
+    const elLink = cc.querySelector('.cc-link');
+    const elLinkSr = cc.querySelector('.cc-link-sr');
+    const elCurrent = cc.querySelector('.cc-current');
+    const N = items.length;
+    const SLICES = 12;
+    const pad = (n) => String(n).padStart(2, '0');
+    cc.querySelector('.cc-total').textContent = pad(N);
+
+    const data = items.map((li) => {
+      const img = li.querySelector('img');
+      return { src: img.currentSrc || img.src, title: li.querySelector('h3').textContent, text: li.querySelector('p').textContent, href: li.dataset.href || '#' };
+    });
+
+    const cards = data.map((d, i) => {
+      const card = document.createElement('div');
+      card.className = 'cc-card';
+      card.dataset.index = i;
+      card.setAttribute('aria-hidden', 'true');
+      const strips = [];
+      for (let j = 0; j < SLICES; j++) {
+        const s = document.createElement('div');
+        s.className = 'cc-strip' + (j === 0 ? ' is-first' : j === SLICES - 1 ? ' is-last' : '');
+        s.style.backgroundImage = `url("${d.src}")`;
+        card.appendChild(s);
+        strips.push(s);
+      }
+      const refl = document.createElement('div');
+      refl.className = 'cc-refl';
+      refl.style.backgroundImage = `url("${d.src}")`;
+      card.appendChild(refl);
+      stage.appendChild(card);
+      return { card, strips, refl };
+    });
+
+    let W, H, R, D, step, slice, visible;
+    const measure = () => {
+      const sw = stage.clientWidth || window.innerWidth;
+      W = sw < 640 ? Math.min(sw * 0.64, 300) : Math.max(250, Math.min(sw * 0.205, 380));
+      H = W * 0.8;
+      R = W * 3.6;                 // sylinderens radius
+      D = W * 0.62;                // hvor langt bak skjermplanet midtkortet står
+      const gap = W * 0.075;
+      step = (W + gap) / R;        // vinkel mellom kort
+      slice = (W / R) / SLICES;    // vinkel per stripe
+      visible = sw < 640 ? 1.5 : sw > 1500 ? 3.2 : 2.5;
+      const sliceW = W / SLICES;
+      cc.style.setProperty('--cc-h', `${Math.round(H * 1.42)}px`);
+      cc.style.setProperty('--cc-y', `${Math.round(H * 0.66)}px`);
+      cc.style.setProperty('--cc-p', `${Math.round(W * 3.4)}px`);
+      cc.style.setProperty('--cc-caption-gap', `${-Math.round(H * 0.16)}px`);
+      cards.forEach(({ strips, refl }) => {
+        refl.style.width = `${W}px`;
+        refl.style.height = `${H * 0.5}px`;
+        refl.style.left = `${-W / 2}px`;
+        refl.style.top = `${H / 2 + 8}px`;
+        refl.style.backgroundSize = `${W}px ${H}px`;
+        refl.style.backgroundPosition = '0 100%';
+        strips.forEach((s, j) => {
+          s.style.width = `${sliceW + (j < SLICES - 1 ? 1 : 0)}px`;   // 1px overlapp skjuler sømmer
+          s.style.height = `${H}px`;
+          s.style.left = `${-sliceW / 2}px`;
+          s.style.top = `${-H / 2}px`;
+          s.style.backgroundSize = `${W}px ${H}px`;
+          s.style.backgroundPosition = `${-j * sliceW}px 0`;
+        });
+      });
+    };
+
+    let pos = 0, target = 0, raf = 0, last = 0;
+    const BASE_K = 7.5;
+    let k = BASE_K, dragging = false, activeIdx = -1;
+    const wrap = (off) => { off = ((off % N) + N) % N; return off > N / 2 ? off - N : off; };
+
+    const render = () => {
+      const rc = R * Math.cos((W / R) / 4);
+      cards.forEach(({ card, strips, refl }, i) => {
+        const off = wrap(i - pos);
+        const a = Math.abs(off);
+        const op = a <= visible ? 1 : Math.max(0, 1 - (a - visible) / 0.7);
+        card.style.visibility = op <= 0.01 ? 'hidden' : '';
+        card.classList.toggle('is-active', a < 0.5);
+        if (op <= 0.01) return;
+        const centre = off * step;
+        for (let j = 0; j < SLICES; j++) {
+          const phi = -(centre + (j + 0.5 - SLICES / 2) * slice);
+          strips[j].style.transform = `translate3d(0,0,${(R - D).toFixed(2)}px) rotateY(${phi.toFixed(5)}rad) translate3d(0,0,${(-R).toFixed(2)}px)`;
+          strips[j].style.opacity = op < 1 ? op.toFixed(3) : '';
+        }
+        refl.style.transform = `translate3d(0,0,${(R - D).toFixed(2)}px) rotateY(${(-centre).toFixed(5)}rad) translate3d(0,0,${(-rc).toFixed(2)}px) scaleY(-1)`;
+        refl.style.opacity = op < 1 ? op.toFixed(3) : '';
+      });
+    };
+
+    const setCaption = () => {
+      const idx = ((Math.round(target) % N) + N) % N;
+      if (idx === activeIdx) return;
+      const first = activeIdx === -1;
+      activeIdx = idx;
+      elCurrent.textContent = pad(idx + 1);
+      const apply = () => {
+        const d = data[idx];
+        elTitle.textContent = d.title;
+        elText.textContent = d.text;
+        elLink.href = d.href;
+        elLinkSr.textContent = `${T('om')} ${d.title.toLowerCase()}`;
+        caption.classList.remove('is-changing');
+      };
+      if (first || reduceMotion.matches) return apply();
+      caption.classList.add('is-changing');
+      clearTimeout(setCaption.t);
+      setCaption.t = setTimeout(apply, 170);
+    };
+
+    const tick = (t) => {
+      const dt = last ? Math.min(0.05, (t - last) / 1000) : 1 / 60;
+      last = t;
+      pos += (target - pos) * (1 - Math.exp(-(reduceMotion.matches ? 60 : k) * dt));
+      if (!dragging && Math.abs(target - pos) < 0.0005) { pos = target; render(); raf = 0; last = 0; return; }
+      render();
+      raf = requestAnimationFrame(tick);
+    };
+    const kick = () => { setCaption(); if (!raf) { last = 0; raf = requestAnimationFrame(tick); } };
+    const go = (delta) => { k = BASE_K; target = Math.round(target) + delta; kick(); };
+    const goTo = (i) => { go(wrap(i - Math.round(target))); };
+    const openActive = () => { window.location.href = data[activeIdx].href; };
+
+    cc.querySelector('[data-cc-prev]').addEventListener('click', () => go(-1));
+    cc.querySelector('[data-cc-next]').addEventListener('click', () => go(1));
+    stage.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      else if (e.key === 'Enter') { openActive(); }
+    });
+
+    let sx = 0, st = 0, lx = 0, lt = 0, vel = 0, moved = false, downCard = null, pid = null;
+    stage.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      dragging = true; moved = false; pid = e.pointerId;
+      sx = lx = e.clientX; lt = performance.now(); st = target; vel = 0;
+      downCard = e.target.closest('.cc-card');
+      k = 16;
+    });
+    stage.addEventListener('pointermove', (e) => {
+      if (!dragging || e.pointerId !== pid) return;
+      const dx = e.clientX - sx;
+      if (!moved && Math.abs(dx) > 6) { moved = true; stage.classList.add('is-dragging'); try { stage.setPointerCapture(pid); } catch (_) {} }
+      if (!moved) return;
+      const now = performance.now();
+      vel = vel * 0.7 + ((e.clientX - lx) / Math.max(1, now - lt)) * 0.3;
+      lx = e.clientX; lt = now;
+      target = st - dx / (W * 1.05);
+      kick();
+    });
+    const endDrag = (e) => {
+      if (!dragging || (e && e.pointerId !== pid)) return;
+      dragging = false;
+      stage.classList.remove('is-dragging');
+      k = BASE_K;
+      if (moved) {
+        target = Math.round(target + Math.max(-3, Math.min(3, (-vel * 1000 / W) * 0.22)));
+        kick();
+      } else if (downCard) {
+        const idx = Number(downCard.dataset.index);
+        if (idx === activeIdx && Math.abs(wrap(idx - pos)) < 0.5) openActive();
+        else goTo(idx);
+      }
+      downCard = null;
+    };
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+    stage.addEventListener('lostpointercapture', endDrag);
+
+    let wheelTimer;
+    stage.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      k = 12;
+      target += e.deltaX / (W * 1.6);
+      kick();
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(() => { k = BASE_K; target = Math.round(target); kick(); }, 140);
+    }, { passive: false });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { measure(); render(); }, 100); });
+
+    // Ved språkbytte: les titler/tekster på nytt fra kildelisten
+    document.addEventListener('langchange', () => {
+      items.forEach((li, i) => { data[i].title = li.querySelector('h3').textContent; data[i].text = li.querySelector('p').textContent; });
+      activeIdx = -1;
+      setCaption();
+    });
+
+    cc.classList.add('is-ready');
+    measure();
+    render();
+    setCaption();
+  }
+
+  /* =======================================================================
+     Video – parallakse-karusell.
+     Glir av seg selv i en uendelig løkke, stopper ved hover/fokus, kan dras
+     med mus eller finger. Bildet inne i hvert kort beveger seg saktere enn
+     kortet (parallakse), avhengig av hvor kortet står på skjermen.
+     ======================================================================= */
+  const px = document.querySelector('.px');
+  if (px) {
+  const rail = px.querySelector('.px-rail');
+  const originals = [...rail.children];
+  const NV = originals.length;
+  originals.forEach((c) => { c.querySelector('.px-time').textContent = c.dataset.duration || 'Video'; });
+
+  const SPEED = 34;                       // px per sekund
+  let x = 0, setW = 0, cardW = 0, stepW = 0, viewW = 0, speed = SPEED, fling = 0;
+  let hover = false, focusIn = false, inView = true, vDragging = false;
+  let tween = null, vRaf = 0, vLast = 0, slots = [];
+
+  const layout = () => {
+    rail.querySelectorAll('[data-clone]').forEach((n) => n.remove());
+    const gap = parseFloat(getComputedStyle(rail).columnGap) || 24;
+    cardW = originals[0].offsetWidth;
+    stepW = cardW + gap;
+    setW = stepW * NV;
+    viewW = px.clientWidth;
+    const copies = Math.ceil((viewW * 1.25) / setW);
+    for (let c = 0; c < copies; c++) {
+      originals.forEach((o) => {
+        const cl = o.cloneNode(true);
+        cl.dataset.clone = '';
+        cl.setAttribute('aria-hidden', 'true');
+        cl.tabIndex = -1;
+        rail.appendChild(cl);
+      });
+    }
+    slots = [...rail.children].map((el) => ({ img: el.querySelector('.px-media img'), left: el.offsetLeft }));
+  };
+
+  const wrapX = () => { if (setW) { x %= setW; if (x > 0) x -= setW; } };
+  const paint = () => {
+    rail.style.transform = `translate3d(${x.toFixed(2)}px,0,0)`;
+    const half = viewW / 2;
+    const maxShift = cardW * 0.11;
+    for (const sl of slots) {
+      const centre = sl.left + x + cardW / 2;
+      if (centre < -cardW || centre > viewW + cardW) continue;
+      const n = Math.max(-1, Math.min(1, (centre - half) / (half + cardW / 2)));
+      sl.img.style.transform = `translate3d(${(-n * maxShift).toFixed(2)}px,0,0)`;
+    }
+  };
+
+  const vTick = (t) => {
+    const dt = vLast ? Math.min(0.05, (t - vLast) / 1000) : 1 / 60;
+    vLast = t;
+    if (tween) {
+      const p = Math.min(1, (t - tween.t0) / tween.dur);
+      x = tween.from + (tween.to - tween.from) * (1 - Math.pow(1 - p, 3));
+      if (p >= 1) tween = null;
+    } else if (!vDragging) {
+      const want = (hover || focusIn || reduceMotion.matches) ? 0 : SPEED;
+      speed += (want - speed) * (1 - Math.exp(-3 * dt));
+      fling *= Math.exp(-2.8 * dt);
+      x -= (speed + fling) * dt;
+    }
+    wrapX();
+    paint();
+    vRaf = inView ? requestAnimationFrame(vTick) : 0;
+  };
+  const vStart = () => { if (!vRaf) { vLast = 0; vRaf = requestAnimationFrame(vTick); } };
+
+  // Pilene: hopp til neste/forrige kort og la det lande pent i kant
+  const nudge = (dir) => {
+    const from = x;
+    const cur = -from / stepW;
+    const targetSlot = dir > 0 ? Math.floor(cur + 0.02) + 1 : Math.ceil(cur - 0.02) - 1;
+    tween = { from, to: -targetSlot * stepW, t0: performance.now(), dur: 700 };
+    speed = 0; fling = 0;
+    vStart();
+  };
+  document.querySelector('[data-video-prev]').addEventListener('click', () => nudge(-1));
+  document.querySelector('[data-video-next]').addEventListener('click', () => nudge(1));
+
+  px.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') hover = true; });
+  px.addEventListener('pointerleave', () => { hover = false; });
+  px.addEventListener('focusin', () => { focusIn = true; });
+  px.addEventListener('focusout', () => { focusIn = false; });
+
+  let dsx = 0, dx0 = 0, dlx = 0, dlt = 0, dvel = 0, dMoved = false, dPid = null;
+  px.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
+    vDragging = true; dMoved = false; dPid = e.pointerId; tween = null;
+    dsx = dlx = e.clientX; dx0 = x; dlt = performance.now(); dvel = 0;
+  });
+  px.addEventListener('pointermove', (e) => {
+    if (!vDragging || e.pointerId !== dPid) return;
+    const d = e.clientX - dsx;
+    if (!dMoved && Math.abs(d) > 6) { dMoved = true; px.classList.add('is-dragging'); try { px.setPointerCapture(dPid); } catch (_) {} }
+    if (!dMoved) return;
+    const now = performance.now();
+    dvel = dvel * 0.7 + ((e.clientX - dlx) / Math.max(1, now - dlt)) * 0.3;
+    dlx = e.clientX; dlt = now;
+    x = dx0 + d;
+    speed = 0;
+  });
+  const vEnd = (e) => {
+    if (!vDragging || (e && e.pointerId !== dPid)) return;
+    vDragging = false;
+    px.classList.remove('is-dragging');
+    if (dMoved) {
+      fling = Math.max(-2600, Math.min(2600, -dvel * 1000));
+      px.addEventListener('click', (ev) => { ev.stopPropagation(); ev.preventDefault(); }, { capture: true, once: true });
+    }
+  };
+  px.addEventListener('pointerup', vEnd);
+  px.addEventListener('pointercancel', vEnd);
+  px.addEventListener('lostpointercapture', vEnd);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => { inView = en.isIntersecting; if (inView) vStart(); }).observe(px);
+  }
+  let vResize;
+  window.addEventListener('resize', () => {
+    clearTimeout(vResize);
+    vResize = setTimeout(() => { const f = setW ? x / setW : 0; layout(); x = f * setW; wrapX(); paint(); }, 120);
+  });
+  layout();
+  paint();
+  vStart();
+
+  /* ---------- Video-modal ---------- */
+  const modal = document.querySelector('.video-modal');
+  const frame = modal.querySelector('.video-modal__frame');
+  let lastTrigger = null;
+  const toEmbed = (url) => {
+    const yt = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
+    if (yt) return `https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1&rel=0`;
+    const vm = url.match(/vimeo\.com\/(\d+)/);
+    if (vm) return `https://player.vimeo.com/video/${vm[1]}?autoplay=1`;
+    return null;
+  };
+  const openVideo = (card, trigger) => {
+    lastTrigger = trigger || card;
+    const src = (card.dataset.video || '').trim();
+    const title = T(card.dataset.title || 'Video');
+    frame.innerHTML = '';
+    modal.setAttribute('aria-label', title);
+    if (!src) {
+      const box = document.createElement('div');
+      box.className = 'video-modal__empty';
+      box.innerHTML = `<img src="${card.querySelector('img').src}" alt=""><p>${T('Videoen legges inn snart.')}</p>`;
+      frame.appendChild(box);
+    } else if (toEmbed(src)) {
+      const iframe = document.createElement('iframe');
+      iframe.src = toEmbed(src);
+      iframe.title = title;
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.allowFullscreen = true;
+      frame.appendChild(iframe);
+    } else {
+      const video = document.createElement('video');
+      video.src = src; video.controls = true; video.playsInline = true;
+      video.autoplay = !reduceMotion.matches;
+      video.poster = card.querySelector('img').src;
+      frame.appendChild(video);
+    }
+    modal.showModal();
+  };
+  rail.addEventListener('click', (e) => { const card = e.target.closest('.px-card'); if (card) openVideo(card); });
+  document.querySelector('[data-video-open]').addEventListener('click', (e) => openVideo(originals[0], e.currentTarget));
+  modal.querySelector('.video-modal__close').addEventListener('click', () => modal.close());
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
+  modal.addEventListener('close', () => { frame.innerHTML = ''; if (lastTrigger) lastTrigger.focus(); });
+
+  }
+
+  /* ---------- Innholdsfortegnelse: marker aktiv seksjon ---------- */
+  const toc = document.querySelector('.toc');
+  if (toc && 'IntersectionObserver' in window) {
+    const links = [...toc.querySelectorAll('a')];
+    const io2 = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) links.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id));
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    links.forEach((a) => { const t = document.querySelector(a.getAttribute('href')); if (t) io2.observe(t); });
+  }
+
+  const y = document.querySelector('[data-year]');
+  if (y) y.textContent = new Date().getFullYear();
+
+  let saved = null;
+  try { saved = localStorage.getItem('ktv-lang'); } catch (_) {}
+  if (saved === 'en') applyLang('en', false);
+})();
+</script>
+</body>
+</html>
